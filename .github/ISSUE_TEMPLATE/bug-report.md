@@ -9,8 +9,10 @@ assignees: ''
 
 Format: 
 
-**Bug**: Title
-**ID**: Commit ID
+**Bug Title:** 
+**ID:** Commit ID
+
+**Bug Description:**
 
 **Reproduced by:**
 1. Step 1...
