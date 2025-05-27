@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>This is the checkout page.</p>
-    
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}Checkout{% endblock %}
+{% block content %}
+
+<div class="container-fluid">
+<p class="p"> This is the checkout page </p>
+</div>
+
+{% endblock %}
