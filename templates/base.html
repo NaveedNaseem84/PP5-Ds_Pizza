@@ -1,7 +1,7 @@
 {% load static %}
 {% url 'home' as home_url %}
 
-
+<!-- Core base template take from CI. Credit in readme.-->
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
@@ -36,7 +36,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}">D's</a>
+                <a class="navbar-brand navbar-logo" href="{% url 'home' %}">D's</a>
                 <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -50,23 +50,21 @@
                         </li>
                          <li class="nav-item">
                             <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'management' %}">Management</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'checkout' %}">Checkout</a>
-                        </li>                        
+                                href="{% url 'management' %}"><i class="fa-solid fa-user text-dark"></i></a>
+                        </li> 
                     </ul>
                     <ul class="navbar-nav ms-auto">                        
                          <li class="nav-item">
                             <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'cart' %}">Cart</a>
+                                href="{% url 'cart' %}"><i
+                        class="fa-solid fa-cart-shopping fa-lg text-dark"></i></a>
                         </li>
                     </ul>
 
                 </div>
             </div>
         </nav>
+        <div id="messages" class="p-2 text-center">Login info</div>
     </header>
     <main class>
         {% block content %}
@@ -75,8 +73,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto pt-3 text-center text-light">
-        <p>footer - social icons</p>
+    <footer class="footer mt-auto pt-3 text-center text-light">       
+        <ul class="d-flex justify-content-center list-unstyled">
+            <li><a href="https://Facebook.com" target="_blank" rel="noopener" aria-label="new tab - visit us on facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a href="https://x.com" target="_blank" rel="noopener" aria-label="new tab - visit us on X"><i class="fa-brands fa-square-twitter"></i></a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="new tab - visit us on instagram"><i class="fa-brands fa-square-instagram"></i></a></li>
+            <li><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="new tab - visit us on youtube"><i class="fa-brands fa-square-youtube"></i></a></li>      
+        </ul>
     </footer>
 
     
