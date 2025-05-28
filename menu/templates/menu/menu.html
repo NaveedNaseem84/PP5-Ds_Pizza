@@ -4,61 +4,161 @@
 {% block content %}
 
 <div class="container-fluid secondary-bg d-flex flex-column h-100">
-    <div>
-        <h1> Our best seller deals!</h1>
-        {% for deal in deals %}
-        <h2>{{ deal.name }}</h2>
-        <p>{{ deal.pizza }}</p>
-        <p>{{ deal.side }}</p>
-        <p>{{ deal.drink }}</p>
-        <p>{{ deal.dessert }}</p>
-        <p>£{{ deal.price }}</p>
-        {% endfor %}
+
+    <div class="row justify-content-center text-dark">
+        <div class="col-lg-6">
+            <!--Deals-->
+            <section id="deals" class="mb-4">
+                <h1 class="brand-heading-text text-center"> Our best seller deals</h1>
+                <div class="row text-center">
+                    {% for deal in deals %}
+                    <div class="offset-2 col-8 offset-sm-0 col-sm-3">
+                        <div class="card mb-3">
+                            <div class="card-body brand-text text-center">
+                                {% if deal.pizza.is_veg == "Yes" and deal.pizza.is_gf == "Yes" %}
+                                <div class="container text-end">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="allergen-circle">VG</p>
+                                            <p class="allergen-circle">GF</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% elif deal.pizza.is_veg == "Yes" %}
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="allergen-circle">VG</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% elif deal.pizza.is_gf == "Yes" %}
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="allergen-circle">GF</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <p class="allergen-circle-none">&nbsp</p>
+                                {% endif %}
+                                <p>{{ deal.name }}</p>
+                                <p>{{ deal.pizza }}</p>
+                                <p>{{ deal.side }}</p>
+                                <p>{{ deal.drink }}</p>
+                                <p>{{ deal.dessert }}</p>
+                                <p>£{{ deal.price }}</p>
+                                <a href="" class="btn btn-outline-dark">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            <!--Pizzas-->
+            <section id="pizzas" class="mb-4">
+                <h1 class="brand-heading-text text-center"> Something special...?</h1>
+                <h2 class="brand-heading-text text-center">Artisan Pizza's</h2>
+                <div class="row">
+                    {% for item in pizza %}
+                    <div class="offset-2 col-8 offset-sm-0 col-sm-3 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body brand-text text-center">
+                                {% if item.is_veg == "Yes" and item.is_gf == "Yes" %}
+                                <div class="container text-center">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="allergen-circle">VG</p>
+                                            <p class="allergen-circle">GF</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% elif item.is_veg == "Yes" %}
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="allergen-circle">VG</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% elif item.is_gf == "Yes" %}
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="allergen-circle">GF</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <p class="allergen-circle-none">&nbsp</p>
+                                {% endif %}
+                                <p class="card-title">{{ item.name }}</p>
+                                <p class="card-text">£{{ item.price }}</p>
+                                <a href="" class="btn btn-outline-dark">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+
+        <div class="col-8 offset-sm-0 col-sm-1 mb-4">
+            <!--Sides-->
+            <section id="sides">
+                <h2 class="text-center product-heading brand-heading-text">Sides</h2>
+                <div class="card mb-3">
+                    <div class="card-body brand-text text-center">
+                        {% for side in extras %}
+                        {% if side.category == "Sides" %}
+                        <p class="mt-3">{{ side.name }}</p>
+                        <p><b>£{{ side.price }}</b></p>
+                        <a href="" class="btn btn-outline-dark mb-2">Order</a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <!--Drinks-->
+            <section id="drinks">
+                <h2 class="text-center product-heading brand-heading-text">Drinks</h2>
+                <div class="card mb-3">
+                    <div class="card-body brand-text text-center">
+                        {% for drink in extras %}
+                        {% if drink.category == "Drinks" %}
+                        <p class=" mt-3">{{ drink.name }}</p>
+                        <p><b>£{{ drink.price }}</b></p>
+                        <a href="" class="btn btn-outline-dark mb-2">Order</a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <!--Desserts-->
+            <section id="desserts">
+                <h2 class="text-center product-heading brand-heading-text">Desserts</h2>
+                <div class="card mb-3">
+                    <div class="card-body brand-text text-center">
+                        {% for dessert in extras %}
+                        {% if dessert.category == "Desserts" %}
+                        <p class=" mt-3">{{ dessert.name }}</p>
+                        <p><b>£{{ dessert.price }}</b></p>
+                        <a href="" class="btn btn-outline-dark">Order</a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!--"Sticky" cart in top right-->
+        <div class="card sticky-cart d-none d-lg-block text-center">
+            <p>Cart Overview:</p>
+            <hr>
+            <ul class="list-unstyled mb-2">
+               <p>empty</p>
+            </ul>            
+        </div>
     </div>
-    <div>
-        <h1> Fancy something different?</h1>
-        {% for item in pizza %}
-        <h2>{{ item.name }}</h2>
-        <p>{{ item.description }}</p>
-        <p>£{{ item.price }}</p>
-        {% endfor %}
-    </div>
-    <div>
-        <h1>Drinks</h1>
-        {% for drink in extras %}
-        {% if drink.category == "Drinks" %}
-         <h2>{{ drink.name }}</h2>
-        <p>{{ drink.description }}</p>
-        <p>£{{ drink.price }}</p>
-
-        {% endif %}
-        {% endfor %}
-    </div>
-
-        <div>
-        <h1>Sides</h1>
-        {% for side in extras %}
-        {% if side.category == "Sides" %}
-          <h2>{{ side.name }}</h2>
-        <p>{{ side.description }}</p>
-        <p>£{{ side.price }}</p>
-
-        {% endif %}
-        {% endfor %}
-    </div>
-
-            <div>
-        <h1>Desserts</h1>
-        {% for dessert in extras %}
-        {% if dessert.category == "Desserts" %}
-          <h2>{{ dessert.name }}</h2>
-        <p>{{ dessert.description }}</p>
-        <p>£{{ dessert.price }}</p>
-
-        {% endif %}
-        {% endfor %}
-    </div>
-
-</div>
-
-{% endblock %}
+    {% endblock %}
