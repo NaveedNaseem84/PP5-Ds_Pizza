@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}Menu{% endblock %}
+{% block content %}
+
+<div class="container-fluid secondary-bg d-flex flex-column h-100">
+    <div class="text-center justify-content-center ">
+        <div class="row text-center">
+            <div class="col-sm">
+                <a href="{% url 'menu' %}" class="sm-4 btn btn-warning mr-3">Back to Menu</a>
+            </div>
+        </div>
+        {%if item == "pizza" or item == "side" or item == "drink" or item == "dessert" %}
+        <h1 class="text-center pt-4">{{ selected_product.name }}</h1>
+        <div class="text-center pt-3">
+            <div class="row">
+                <div class="col-sm">
+                    {% if selected_product.is_veg == "Yes" and selected_product.is_gf == "Yes" %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-success allergen-circle"><b>VG</b></p>
+                                <p class="text-primary allergen-circle"><b>GF</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    {% elif selected_product.is_veg == "Yes" %}
+                    <p class="text-success allergen-circle"><b>VG</b></p>
+                    {% elif selected_product.is_gf == "Yes" %}
+                    <p class="text-primary allergen-circle"><b>GF</b></p>
+                    {% else %}
+                    <p class="allergen-circle-none"></p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    {{ selected_product.description }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                £{{ selected_product.price }}
+            </div>
+        </div>
+        {% elif item == "deal" %}
+        <h1 class="text-center pt-4">{{ selected_product.name }}</h1>
+        <div class="text-center pt-3">
+            <div class="row">
+                <div class="col-sm">
+                    {% if selected_product.pizza.is_veg == "Yes" and selected_product.pizza.is_gf == "Yes" %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-success allergen-circle"><b>VG</b></p>
+                                <p class="text-primary allergen-circle"><b>GF</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    {% elif selected_product.pizza.is_veg == "Yes" %}
+                    <p class="text-success allergen-circle"><b>VG</b></p>
+                    {% elif selected_product.pizza.is_gf == "Yes" %}
+                    <p class="text-primary allergen-circle"><b>GF</b></p>
+                    {% else %}
+                    <p class="allergen-circle-none"></p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <p>Pizza: {{ selected_product.pizza.name }}</p>
+                    <p>Toppings: {{ selected_product.pizza.description }}
+                    <p>Side: {{ selected_product.side }}
+                    <p>Drink: {{ selected_product.drink }}
+                    <p>Dessert: {{ selected_product.dessert }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                £{{ selected_product.price }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
