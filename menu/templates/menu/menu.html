@@ -4,8 +4,61 @@
 {% block content %}
 
 <div class="container-fluid secondary-bg d-flex flex-column h-100">
-    <p>Menu</p>
-   
+    <div>
+        <h1> Our best seller deals!</h1>
+        {% for deal in deals %}
+        <h2>{{ deal.name }}</h2>
+        <p>{{ deal.pizza }}</p>
+        <p>{{ deal.side }}</p>
+        <p>{{ deal.drink }}</p>
+        <p>{{ deal.dessert }}</p>
+        <p>£{{ deal.price }}</p>
+        {% endfor %}
+    </div>
+    <div>
+        <h1> Fancy something different?</h1>
+        {% for item in pizza %}
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+        <p>£{{ item.price }}</p>
+        {% endfor %}
+    </div>
+    <div>
+        <h1>Drinks</h1>
+        {% for drink in extras %}
+        {% if drink.category == "Drinks" %}
+         <h2>{{ drink.name }}</h2>
+        <p>{{ drink.description }}</p>
+        <p>£{{ drink.price }}</p>
+
+        {% endif %}
+        {% endfor %}
+    </div>
+
+        <div>
+        <h1>Sides</h1>
+        {% for side in extras %}
+        {% if side.category == "Sides" %}
+          <h2>{{ side.name }}</h2>
+        <p>{{ side.description }}</p>
+        <p>£{{ side.price }}</p>
+
+        {% endif %}
+        {% endfor %}
+    </div>
+
+            <div>
+        <h1>Desserts</h1>
+        {% for dessert in extras %}
+        {% if dessert.category == "Desserts" %}
+          <h2>{{ dessert.name }}</h2>
+        <p>{{ dessert.description }}</p>
+        <p>£{{ dessert.price }}</p>
+
+        {% endif %}
+        {% endfor %}
+    </div>
+
 </div>
 
 {% endblock %}
