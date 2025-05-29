@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 from .models import Deal, Pizza, Extras
 
 # Create your views here.
@@ -14,16 +15,28 @@ def menu_view(request):
     
     if filter =="all":
         deal = deal
-        pizza = pizza        
+        pizza = pizza
+        messages.add_message(
+        request, messages.SUCCESS,
+        'Filters removed')         
     
     elif filter == "vg":        
-        pizza = pizza.filter(is_veg="Yes", is_gf="No")        
+        pizza = pizza.filter(is_veg="Yes", is_gf="No")
+        messages.add_message(
+        request, messages.SUCCESS,
+        'Veg options shown')        
 
     elif filter == "gf":        
         pizza =pizza.filter(is_veg="No", is_gf="Yes")
+        messages.add_message(
+        request, messages.SUCCESS,
+        'Gluten Free options shown') 
     
     elif filter == "vg_gf":        
         pizza =pizza.filter(is_veg="Yes", is_gf="Yes")
+        messages.add_message(
+        request, messages.SUCCESS,
+        'Veg and Gluten Free shown') 
 
     template = "menu/menu.html"
     context = {

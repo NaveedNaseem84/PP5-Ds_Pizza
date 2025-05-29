@@ -18,6 +18,10 @@ main {
 
 }
 
+#django-messages {
+  position: fixed;
+}
+
 /* footer styling*/
 
 .footer {
@@ -64,6 +68,7 @@ footer a:hover,  a::after {
 #messages{
   background-color: black;
   color: white;
+  height:50px;
 }
 
 
@@ -204,7 +209,7 @@ footer a:hover,  a::after {
 
 .sticky-cart {
   position: fixed;
-  top: 80px;
+  top: 190px;
   right: 10px;
   width: 200px;
   border: 1px solid #ddd;
