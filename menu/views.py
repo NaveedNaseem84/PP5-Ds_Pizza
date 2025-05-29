@@ -18,7 +18,7 @@ def menu_view(request):
         pizza = pizza
         messages.add_message(
         request, messages.SUCCESS,
-        'Filters removed')         
+        'All options shown')         
     
     elif filter == "vg":        
         pizza = pizza.filter(is_veg="Yes", is_gf="No")
@@ -36,7 +36,14 @@ def menu_view(request):
         pizza =pizza.filter(is_veg="Yes", is_gf="Yes")
         messages.add_message(
         request, messages.SUCCESS,
-        'Veg and Gluten Free shown') 
+        'Veg and Gluten Free shown')
+
+    elif filter == "default":       
+        messages.add_message(
+        request, messages.INFO,
+        'Please select an option first')
+    
+    
 
     template = "menu/menu.html"
     context = {
