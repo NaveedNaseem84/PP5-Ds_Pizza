@@ -10,6 +10,21 @@ def menu_view(request):
     pizza = Pizza.objects.filter(active="Yes")
     extra = Extras.objects.filter(active='Yes')
 
+    filter = request.GET.get('allergen-filter')
+    
+    if filter =="all":
+        deal = deal
+        pizza = pizza        
+    
+    elif filter == "vg":        
+        pizza = pizza.filter(is_veg="Yes", is_gf="No")        
+
+    elif filter == "gf":        
+        pizza =pizza.filter(is_veg="No", is_gf="Yes")
+    
+    elif filter == "vg_gf":        
+        pizza =pizza.filter(is_veg="Yes", is_gf="Yes")
+
     template = "menu/menu.html"
     context = {
         "deals": deal,
