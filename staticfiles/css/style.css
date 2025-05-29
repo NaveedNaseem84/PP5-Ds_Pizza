@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Core styling */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+}
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: black;  
+  color: white !important;
+
+}
+
+/* footer styling*/
+
+.footer {
+  background-color: black; 
+}
+
+.footer li {
+padding-left: 20px;
+padding-right: 20px;
+
+
+}
+
+.footer i {
+  font-size: 150%;
+  padding: 10px;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover,  a::after {
+  color: inherit;
+}
+
+/*Base template styling*/
+
+/*nav bar */
+
+.navbar {
+  background-color: darkorange !important;
+  font-size: 130%;
+}
+
+.navbar-logo {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 130%;
+  background-color: black !important;
+  color: darkorange !important;
+}
+
+#messages{
+  background-color: black;
+  color: white;
+}
+
+
+
+/* Index/main page*/
+
+#main-index-bg {
+  background: url('/static/images/main-index-bg.webp');
+  background-attachment: fixed;
+  padding: 1%;
+  opacity: 0.9;
+
+}
+
+.main-logo {
+  background-image: url("/static/images/logo.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 78%;
+  height: 350px;
+  margin-top: 2%;
+}
+
+/* animation below from CSS-tricks.com: https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/ */
+
+.animate.pop {
+  animation-duration: 0.5s;
+  animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+}
+
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.1, 0.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+.animateintro.pop {
+  animation-duration: 1.3s;
+  animation-delay: 0.5s;
+  animation-name: animateintro-pop;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+}
+
+@keyframes animateintro-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.1, 0.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+.intro-text {
+  margin-top: 5%;
+  font-size: larger;
+}
+
+.intro-text h1 {
+  font-weight: bold;
+  font-size: 3.2vw;
+}
+
+.intro-section {
+  background-color: black;
+  margin-top: 10%;
+  border-radius: 25px;
+  opacity: 0.9;
+}
+
+#lets-go {
+  background-color: darkorange;
+  color: black;
+  padding: 10px;
+  margin: auto;
+  border-radius: 25px;
+}
+#lets-go a {
+  color: black;
+  text-decoration: none;
+}
+
+#lets-go a:hover,  a::after {
+  color: inherit;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* menu styling*/
+
+.card {
+  background-color: white !important;
+  color: black !important;
+  opacity: 0.8;
+  border: 4px orange solid;
+  border-radius: 15px;
+}
+
+.product-heading {
+
+ background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50px;
+  padding: 5px;
+  border: 2px solid white; 
+
+}
+.allergen-circle {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
+  padding-top: 2px;
+  display: inline-block;
+  opacity: 1;
+  border: 2px green solid;
+}
+
+
+.allergen-circle-none {
+  height: 30px;
+  width: 30px;
+  background-color: none;
+  border-radius: 50%;
+  padding-top: 2px;
+  display: inline-block;
+  opacity: 1;
+}
+
+.sticky-cart {
+  position: fixed;
+  top: 80px;
+  right: 10px;
+  width: 200px;
+  border: 1px solid #ddd;
+  color: black;
+  padding: 15px;
+  font-size: 90%;
+
+}
+
+
+
+/* generic styling*/
+
+.secondary-bg {
+  background: url('/static/images/secondary-bg.webp');
+  background-attachment: fixed;
+  padding: 1%;
+
+}
+
+.brand-color {
+  color: darkorange;
+}
+
+.brand-text {
+  color: black !important;
+}
+
+.brand-heading-text {
+  color: white;
+}
+
+/* media queries */
+
+@media (max-width: 767.98px) {
+  #main-index-bg,
+  #menu-background {
+    background: none;
+    margin-top: 1px;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .col {
+    padding: 0;
+  }
+
+  .main-logo {
+    margin: auto;
+    height: 150px;
+  }
+
+  .intro-text h1 {
+    font-size: 5.8vw;
+  }
+  .intro-text {
+    font-size: 4vw;
+  }
+
+  .intro-section {
+  border: 2px darkorange solid;
+
+}
+
+.secondary-bg {
+  background-image: none;
+}
+
+}
