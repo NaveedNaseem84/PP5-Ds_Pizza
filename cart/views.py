@@ -18,20 +18,18 @@ def add_to_bag(request):
     if item_type == 'pizza':
         pizza_bag = request.session.get('pizza_bag', {})
         if item_id in pizza_bag:
-            pizza_bag[item_id] += quantity
-            
-        else:
-            pizza_bag[item_type] = item_type
+            pizza_bag[item_id] += quantity            
+        
+        else:          
             pizza_bag[item_id] = quantity
         request.session['pizza_bag'] = pizza_bag
 
     elif item_type == 'deal':
         deal_bag = request.session.get('deal_bag', {})
         if item_id in deal_bag:
-            deal_bag[item_id] += quantity
-           
-        else:
-            deal_bag[item_type] = item_type
+            deal_bag[item_id] += quantity 
+
+        else:           
             deal_bag[item_id] = quantity
             
         request.session['deal_bag'] = deal_bag
@@ -40,8 +38,8 @@ def add_to_bag(request):
         side_bag = request.session.get('side_bag', {})
         if item_id in side_bag:
             side_bag[item_id] += quantity
-        else:
-            side_bag[item_type] = item_type
+
+        else:            
             side_bag[item_id] = quantity
         request.session['side_bag'] = side_bag
 
@@ -49,8 +47,8 @@ def add_to_bag(request):
         drink_bag = request.session.get('drink_bag', {})
         if item_id in drink_bag:
             drink_bag[item_id] += quantity
-        else:
-            drink_bag[item_type] = item_type
+
+        else:            
             drink_bag[item_id] = quantity
         request.session['drink_bag'] = drink_bag
 
@@ -58,22 +56,9 @@ def add_to_bag(request):
         dessert_bag = request.session.get('dessert_bag', {})
         if item_id in dessert_bag:
             dessert_bag[item_id] += quantity
-        else:
-            dessert_bag[item_type] = item_type
+            
+        else:            
             dessert_bag[item_id] = quantity
         request.session['dessert_bag'] = dessert_bag
-
-    pizza_bag = request.session.get('pizza_bag', {})
-    deal_bag = request.session.get('deal_bag', {})
-    side_bag = request.session.get('side_bag', {})
-    drink_bag = request.session.get('drink_bag', {})
-    dessert_bag = request.session.get('dessert_bag', {})
-    
-   
-    print(pizza_bag)    
-    print(deal_bag)    
-    print(side_bag)    
-    print(drink_bag)      
-    print(dessert_bag)
 
     return redirect(menu_view)

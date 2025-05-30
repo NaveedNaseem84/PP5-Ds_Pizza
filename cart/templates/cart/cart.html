@@ -5,10 +5,26 @@
 
 <div class="container-fluid secondary-bg d-flex flex-column h-100">
     <p>cart</p>
-    <p>{{total}}</p>
-    <p>{{grand_total}}</p>
-<p>{{test}}</p>
-   
+    <a href="{% url 'menu' %}" class="col-2 btn btn-warning mr-3">Back to Menu</a>
+
+    {% if bag_items %}
+
+    <div class="row">
+        <div class="col-sm text-left">
+            {% for item in bag_items %}
+            {{item.quantity}} x {{item.product_name}} @ {{item.price}}
+            <p>item total: {{item.total}}</p>
+            {% endfor %}
+            <p>Grand total: {{grand_total}}</p>
+            <p>Total items: {{bag_quantity}}</p>
+
+    {% else %}
+    <p> No products in basket</p>        
+    {% endif %}
+
+        </div>
+
+    </div>
 </div>
 
 {% endblock %}
