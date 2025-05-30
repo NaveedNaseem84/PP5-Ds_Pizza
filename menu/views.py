@@ -66,9 +66,9 @@ def product_detail(request, product_id):
     elif item in ("side","drink","dessert"):
          selected_product = get_object_or_404(Extras, pk=product_id)
 
-    print(selected_product.name)
-    print(selected_product.description)
-    print(selected_product.price)
+   # print(selected_product.name)
+    #print(selected_product.description)
+    #print(selected_product.price)
     context = {
         "selected_product": selected_product,
         "item": item
