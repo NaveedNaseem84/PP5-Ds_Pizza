@@ -1,5 +1,8 @@
 {% load static %}
 {% url 'home' as home_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!-- Core base template take from CI. Credit in readme.-->
 <!DOCTYPE html>
@@ -52,21 +55,37 @@
                             <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                                 href="{% url 'management' %}"><i class="fa-solid fa-user text-dark"></i></a>
                         </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
                     </ul>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'cart' %}">£{{grand_total}}<i class="fa-solid fa-cart-shopping text-dark"></i></a>
+                                href="{% url 'cart' %}">£{{grand_total}}<i
+                                    class="fa-solid fa-cart-shopping text-dark"></i></a>
                         </li>
                     </ul>
 
                 </div>
             </div>
-            
+
         </nav>
-        <div id="messages" class="p-2 text-center">Login info </div>
+
         <!-- displaying Django messages -->
-         <!-- core structure adapted from CI content - ref in readme.md -->
+        <!-- core structure adapted from CI content - ref in readme.md -->
 
         <div id="django-messages" class="container-fluid">
             <div class=" text-center">
@@ -81,6 +100,15 @@
                 </div>
             </div>
         </div>
+        <div id="messages" class="p-2 text-center">
+            {% if user.is_authenticated %}
+            <p class="text-center m-3">welcome {{ user }}</p>
+            {% else %}
+            <p class="text-center m-5"></p>
+            {% endif %}
+
+        </div>
+
 
     </header>
     <main class>

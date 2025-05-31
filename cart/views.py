@@ -132,7 +132,6 @@ def decrease_from_bag(request, item_id, item_type):
 
         if bag[item_type][item_id]['quantity'] < 1:
             del bag[item_type][item_id]
-            messages.add_message(request, messages.INFO,f"Empty cart.")   
 
     request.session['bag'] = bag
 

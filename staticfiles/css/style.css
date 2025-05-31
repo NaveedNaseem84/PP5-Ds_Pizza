@@ -20,6 +20,7 @@ main {
 
 #django-messages {
   position: fixed;
+  z-index: 9999;
 }
 
 /* footer styling*/
@@ -91,6 +92,16 @@ footer a:hover,  a::after {
   width: 78%;
   height: 350px;
   margin-top: 2%;
+}
+
+.main-logo-credentials {
+  background-image: url("/static/images/logo.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 78%;
+  height: 200px;
+  margin-top: 0%;
 }
 
 /* animation below from CSS-tricks.com: https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/ */
@@ -259,7 +270,7 @@ footer a:hover,  a::after {
     padding: 0;
   }
 
-  .main-logo {
+  .main-logo, .main-logo-credentials {
     margin: auto;
     height: 150px;
   }
