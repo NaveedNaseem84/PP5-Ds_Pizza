@@ -29,6 +29,7 @@ def cart_contents(request):
                 grand_total +=total
                 bag_items.append(
                     {
+                        "item_id": item_id, 
                         "item_type":item_type,
                         'quantity': quantity,
                         'product_name': product.name,
