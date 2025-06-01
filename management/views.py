@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from.forms import NewPizzaForm, NewDealForm
+from.forms import NewPizzaForm, NewDealForm, NewExtraForm
 from menu.views import menu_view
 
 
@@ -66,4 +66,32 @@ def add_deal(request):
    template = "management/product_admin.html"
 
    return render(request, template, context)
-    
+
+def add_extra(request):
+   """
+   Creates a new instance of a side, drink or dessert once valid
+   """ 
+   ## added to show proof of concept only, expand on in readme
+   if not request.user.is_staff:
+        messages.add_message(request, messages.ERROR,'Please login') 
+        return redirect(menu_view)
+   
+   if request.method =="POST":
+        form = NewExtraForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS,'Side, Drink or Dessert added') 
+        
+            return redirect(menu_view)
+   else:
+        form = NewExtraForm()
+
+   context = {
+        "form": form,
+        "product":"Side, Drink or Dessert"
+    }
+
+   template = "management/product_admin.html"
+
+   return render(request, template, context)
