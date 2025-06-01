@@ -10,12 +10,6 @@ class Pizza(models.Model):
     A single instance of the pizza model
     """
 
-    ALLERGEN_CHOICES = [
-        ("VG", "VG"),
-        ("PB", "PB"),
-        ("GF", "GF",)
-    ]
-
     name = models.CharField(max_length=120,
                             unique=True)
 
@@ -27,12 +21,14 @@ class Pizza(models.Model):
                               default="No")
 
     is_gf = models.CharField(choices=ACTIVE_CHOICES,
-                             blank=True,
-                             max_length=3)
+                              max_length=3,
+                              blank=False,
+                              default="No")
 
     is_veg = models.CharField(choices=ACTIVE_CHOICES,
-                              blank=True,
-                              max_length=3)
+                              max_length=3,
+                              blank=False,
+                              default="No")
 
     price = models.DecimalField(max_digits=6, decimal_places=2)
 
