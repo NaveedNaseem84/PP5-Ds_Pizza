@@ -1,5 +1,5 @@
 from django import forms
-from menu.models import Pizza
+from menu.models import Pizza, Deal
 
 class NewPizzaForm(forms.ModelForm):
     """
@@ -23,4 +23,29 @@ class NewPizzaForm(forms.ModelForm):
             "price": forms.NumberInput(attrs={'style': 'width:100%'}),
             
         }
+
+class NewDealForm(forms.ModelForm):
+    """
+    An instance of a new deal
+    """
+    class Meta:
+
+        model = Deal
+        fields =(
+            "name",
+            "description",
+            "pizza",
+            "side",
+            "drink",
+            "dessert",
+            "price",
+            "active",
+        )
+        widgets = {
+          
+            "description": forms.Textarea(attrs={'style': 'width:100%', "rows":3}),            
+            "price": forms.NumberInput(attrs={'style': 'width:100%'}),        
+            
+        }
+
 
