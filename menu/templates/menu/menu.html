@@ -51,6 +51,11 @@
                                 <p>£{{ deal.price }}</p>
                                 <a href="{% url 'product_detail' deal.id %}?item_type=deal"
                                     class="btn btn-outline-dark">View</a>
+                                {% if request.user.is_authenticated and request.user.is_superuser %}                               
+                                <a href="{% url 'update_product' deal.id %}?item_type=deal"
+                                    class="btn btn-warning">update</a>
+                                
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -66,7 +71,7 @@
                     </div>
                 </div>
                 <div class="row text-center">
-                    <div class="brand-heading-text p-3">                      
+                    <div class="brand-heading-text p-3">
                         <form method="get" action="{% url 'menu' %}">
                             <label for="allergen-filter">Filter by:</label>
                             <select name="allergen-filter" id="allergen-filter" class="text-center">
@@ -176,7 +181,6 @@
                 </div>
             </section>
         </div>
-
         <!--"Sticky" cart in top right-->
         <div class="card sticky-cart d-none d-lg-block text-center">
             <p>Cart Overview:</p>
