@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from.forms import NewPizzaForm, NewDealForm, NewExtraForm
 from menu.views import menu_view
-from menu.models import Deal
+from menu.models import Deal, Pizza, Extras
 
 def management_view(request):
 
@@ -99,17 +99,30 @@ def add_extra(request):
 
 def update_product(request, product_id):
 
-    item= request.GET.get('item_type')
-    print(item)
-
     if not request.user.is_staff:
         messages.add_message(request, messages.ERROR, 'Please login as an admin')
         return redirect(menu_view)
+    
+    product = None
+    product_form = None
+        
+    item= request.GET.get('item_type')
+    print(item)
 
-    pizza = get_object_or_404(Deal, id=product_id)
+    if item =="deal":
+        product = get_object_or_404(Deal, id=product_id)
+        product_form = NewDealForm
+
+    elif item =="pizza":
+        product = get_object_or_404(Pizza, id=product_id)
+        product_form = NewPizzaForm
+    
+    elif item =="side" or item=="drink" or item=="dessert":
+        product = get_object_or_404(Extras, id=product_id)
+        product_form = NewExtraForm        
     
     if request.method =="POST":
-        form = NewDealForm(request.POST)
+        form = product_form(request.POST, instance=product)
 
         if form.is_valid():
             form.save()
@@ -117,12 +130,12 @@ def update_product(request, product_id):
         
             return redirect(menu_view)
     else:
-        form = NewDealForm( instance=pizza)
+        form = product_form( instance=product)
 
     context = {
         "form": form,
         "product": "Update",
-        "pizza": pizza
+        "item": item
     }
 
     template = "management/product_admin.html"
