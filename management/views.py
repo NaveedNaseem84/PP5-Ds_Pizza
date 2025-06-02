@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, reverse, redirect, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from.forms import NewPizzaForm, NewDealForm, NewExtraForm
 from menu.views import menu_view
@@ -128,7 +129,7 @@ def update_product(request, product_id):
             form.save()
             messages.add_message(request, messages.SUCCESS,'Sucessfully updated') 
         
-            return redirect(menu_view)
+            return HttpResponseRedirect(reverse(menu_view))
     else:
         form = product_form( instance=product)
 
@@ -141,5 +142,3 @@ def update_product(request, product_id):
     template = "management/product_admin.html"
     return render(request, template, context)
 
-
-    

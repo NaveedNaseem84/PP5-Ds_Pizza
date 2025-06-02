@@ -51,9 +51,12 @@
                                 <p>£{{ deal.price }}</p>
                                 <a href="{% url 'product_detail' deal.id %}?item_type=deal"
                                     class="btn btn-outline-dark">View</a>
-                                {% if request.user.is_authenticated and request.user.is_superuser %}                               
+                                {% if request.user.is_authenticated and request.user.is_superuser %}
                                 <a href="{% url 'update_product' deal.id %}?item_type=deal"
-                                    class="btn btn-warning">update</a>                                
+                                    class="btn btn-warning">Update</a>
+                                <button class="btn btn-danger btn-delete-booking" data-product-id="{{ deal.id}}"
+                                    data-product-type="deal" data-bs-toggle="modal"
+                                    data-bs-target="#deleteConfirm">Delete</button>
                                 {% endif %}
                             </div>
                         </div>
@@ -121,9 +124,13 @@
                                 <p class="card-text">£{{ item.price }}</p>
                                 <a href="{% url 'product_detail' item.id %}?item_type=pizza"
                                     class="btn btn-outline-dark">View</a>
-                                {% if request.user.is_authenticated and request.user.is_superuser %}                               
+                                {% if request.user.is_authenticated and request.user.is_superuser %}
                                 <a href="{% url 'update_product' item.id %}?item_type=pizza"
-                                    class="btn btn-warning">update</a>                                
+                                    class="btn btn-warning">update</a>
+                                <button class="btn btn-danger btn-delete-booking" data-product-id="{{ item.id}}"
+                                    data-product-type="pizza" data-bs-toggle="modal"
+                                    data-bs-target="#deleteConfirm">Delete</button>
+
                                 {% endif %}
                             </div>
                         </div>
@@ -145,10 +152,14 @@
                         <p><b>£{{ side.price }}</b></p>
                         <a href="{% url 'product_detail' side.id %}?item_type=side"
                             class="btn btn-outline-dark">View</a>
-                             {% if request.user.is_authenticated and request.user.is_superuser %}                               
-                                <a href="{% url 'update_product' side.id %}?item_type=side"
-                                    class="btn btn-warning mt-1">update</a>                                
-                                {% endif %}
+                        {% if request.user.is_authenticated and request.user.is_superuser %}
+                        <a href="{% url 'update_product' side.id %}?item_type=side"
+                            class="btn btn-warning mt-1">Update</a>
+                        <button class="btn btn-danger btn-delete-booking" data-product-id="{{ side.id}}"
+                            data-product-type="side" data-bs-toggle="modal"
+                            data-bs-target="#deleteConfirm">Delete</button>
+
+                        {% endif %}
                         {% endif %}
                         {% endfor %}
                     </div>
@@ -165,10 +176,14 @@
                         <p><b>£{{ drink.price }}</b></p>
                         <a href="{% url 'product_detail' drink.id %}?item_type=drink"
                             class="btn btn-outline-dark">View</a>
-                             {% if request.user.is_authenticated and request.user.is_superuser %}                               
-                                <a href="{% url 'update_product' drink.id %}?item_type=drink"
-                                    class="btn btn-warning mt-1">update</a>                                
-                                {% endif %}
+                        {% if request.user.is_authenticated and request.user.is_superuser %}
+                        <a href="{% url 'update_product' drink.id %}?item_type=drink"
+                            class="btn btn-warning mt-1">Update</a>
+                        <button class="btn btn-danger btn-delete-booking" data-product-id="{{ drink.id}}"
+                            data-product-type="drink" data-bs-toggle="modal"
+                            data-bs-target="#deleteConfirm">Delete</button>
+
+                        {% endif %}
 
                         {% endif %}
                         {% endfor %}
@@ -186,10 +201,15 @@
                         <p><b>£{{ dessert.price }}</b></p>
                         <a href="{% url 'product_detail' dessert.id %}?item_type=dessert"
                             class="btn btn-outline-dark mt-1">View</a>
-                             {% if request.user.is_authenticated and request.user.is_superuser %}                               
-                                <a href="{% url 'update_product' dessert.id %}?item_type=dessert"
-                                    class="btn btn-warning mt-1">update</a>                                
-                                {% endif %}
+                        {% if request.user.is_authenticated and request.user.is_superuser %}
+                        <a href="{% url 'update_product' dessert.id %}?item_type=dessert"
+                            class="btn btn-warning mt-1">Update</a>
+
+                        <button class="btn btn-danger btn-delete-booking" data-product-id="{{ dessert.id}}"
+                            data-product-type="dessert" data-bs-toggle="modal"
+                            data-bs-target="#deleteConfirm">Delete</button>
+
+                        {% endif %}
                         {% endif %}
                         {% endfor %}
                     </div>
@@ -207,5 +227,35 @@
     </div>
 </div>
 
+<!-- delete modal-->
+
+<div class="modal text-dark" id="deleteConfirm" data-bs-backdrop="static" tabindex="-1" aria-labelledby="deleteConfirmLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="deleteConfirmLabel">Delete confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="text-center">
+                    <p><strong>Note:</strong></p>
+                    <p>Any deals associated with this item will also be deleted.</p>
+                    <p>Have you considered making the item inactive?</p>
+                     <hr>
+                    <p><strong>Are you sure you want to permanently delete this product?</strong></p>                  
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button id="deleteConfirmation" type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+{% block postloadjs %}
+<script src="{% static 'JS/management/management.js' %}"></script>
 
 {% endblock %}

@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, reverse, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Deal, Pizza, Extras
 
@@ -66,9 +67,6 @@ def product_detail(request, product_id):
     elif item in ("side","drink","dessert"):
          selected_product = get_object_or_404(Extras, pk=product_id)
 
-   # print(selected_product.name)
-    #print(selected_product.description)
-    #print(selected_product.price)
     context = {
         "selected_product": selected_product,
         "item": item
@@ -76,3 +74,30 @@ def product_detail(request, product_id):
 
     return render(request, 'menu/menu_detail.html', context)
 
+
+def delete_product(request, product_id):
+
+    if not request.user.is_staff:
+        messages.add_message(request, messages.ERROR, 'Please login as an admin')
+        return HttpResponseRedirect(reverse(menu_view))    
+    
+    product = None    
+        
+    item= request.GET.get('item_type')
+    print(item)
+    print(request.get_full_path()) 
+
+    if item =="deal":
+        product = get_object_or_404(Deal, id=product_id)       
+
+    elif item =="pizza":
+        product = get_object_or_404(Pizza, id=product_id)
+       
+    
+    elif item =="side" or item=="drink" or item=="dessert":
+        product = get_object_or_404(Extras, id=product_id)       
+
+    product.delete()
+    messages.add_message(request, messages.INFO,'Product Deleted') 
+
+    return HttpResponseRedirect(reverse(menu_view))
