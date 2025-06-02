@@ -4,8 +4,39 @@
 {% block content %}
 
 <div class="container-fluid secondary-bg d-flex flex-column h-100">
-    <p>checkout</p>
-   
-</div>
+      <div class="container col-12 col-md-5 card bg-light text-dark pt-3 mt-5">
+    <div>
+      <h1 class="text-left"> Cart Summary:</h1>
+      <hr>
+    </div>
+        {% if bag_items %}
 
+    <div class="container text-center">
+        <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+            {% csrf_token %}
+            <div class="container text-left">
+                <div class="row">
+                    <div class="col text-start">
+                       form goes here
+                    </div>
+                    <div class="col text-end">
+                        <p><strong>Order Summary:</strong></p>
+                        {% for item in bag_items %}
+                        <p> {{item.product_type}}</p>
+                        <p>{{item.quantity}} x {{item.product_name}} </p>
+                        {% endfor %}
+                        <p><strong>Items: {{ bag_quantity}}</strong></p>
+                        <p style="border-top: 1px solid black;"><strong>Total: {{grand_total}}</strong></p>                        
+                        <a href="{% url 'menu' %}" class=" btn btn-warning mb-3 mr-2 text-right">Add items</a>                        
+                    </div>
+                </div>              
+            </div>
+        </form>
+    </div>
+
+    {% else %}
+    
+    {% endif %}
+</div>
+   
 {% endblock %}
