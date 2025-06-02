@@ -23,18 +23,21 @@ def menu_view(request):
     
     elif filter == "vg":        
         pizza = pizza.filter(is_veg="Yes", is_gf="No")
+        deal = deal.filter(pizza__is_veg="Yes", pizza__is_gf="No")
         messages.add_message(
         request, messages.SUCCESS,
         'Veg options shown')        
 
     elif filter == "gf":        
         pizza =pizza.filter(is_veg="No", is_gf="Yes")
+        deal = deal.filter(pizza__is_veg="No", pizza__is_gf="Yes")
         messages.add_message(
         request, messages.SUCCESS,
         'Gluten Free options shown') 
     
     elif filter == "vg_gf":        
         pizza =pizza.filter(is_veg="Yes", is_gf="Yes")
+        deal = deal.filter(pizza__is_veg="Yes", pizza__is_gf="Yes")
         messages.add_message(
         request, messages.SUCCESS,
         'Veg and Gluten Free shown')
