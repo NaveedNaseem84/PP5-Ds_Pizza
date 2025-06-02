@@ -72,7 +72,11 @@ footer a:hover,  a::after {
   height:50px;
 }
 
+/* signup template*/
 
+#hint_id_password1{
+  color: white;
+}
 
 /* Index/main page*/
 
