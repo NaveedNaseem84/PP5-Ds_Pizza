@@ -41,7 +41,7 @@ class PizzaOrder(models.Model):
     def save(self, *args, **kwargs):
 
         if not self.order_ref:
-            self.order_ref = self._generate_order_number() 
+            self.order_ref = 1111 
         super().save(*args, **kwargs)
     
     def __str__(self):
