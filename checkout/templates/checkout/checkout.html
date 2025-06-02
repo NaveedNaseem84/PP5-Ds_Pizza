@@ -2,11 +2,12 @@
 {% load static %}
 {% block extra_title %}Checkout{% endblock %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 <div class="container-fluid secondary-bg d-flex flex-column h-100">
-      <div class="container col-12 col-md-5 card bg-light text-dark pt-3 mt-5">
+      <div class="container col-12 col-md-4 card bg-light text-dark pt-3 mt-5">
     <div>
-      <h1 class="text-left"> Cart Summary:</h1>
+      <h1 class="text-left"> Checkout</h1>
       <hr>
     </div>
         {% if bag_items %}
@@ -16,10 +17,10 @@
             {% csrf_token %}
             <div class="container text-left">
                 <div class="row">
-                    <div class="col text-start">
-                       form goes here
+                    <div class="col-12 col-md-5 text-start">
+                       {{order_form | crispy }}
                     </div>
-                    <div class="col text-end">
+                    <div class="col offset-1 text-end">
                         <p><strong>Order Summary:</strong></p>
                         {% for item in bag_items %}
                         <p> {{item.product_type}}</p>
@@ -29,7 +30,19 @@
                         <p style="border-top: 1px solid black;"><strong>Total: {{grand_total}}</strong></p>                        
                         <a href="{% url 'menu' %}" class=" btn btn-warning mb-3 mr-2 text-right">Add items</a>                        
                     </div>
+                </div>
+                 <div id="payment">
+                    <p><strong>Payment details</strong></p>
+                    <div class="col-12 pt-2 pb-2" id="card-element">
+                    </div>
+                    <div class="col p-3 mb-2 text-danger" id="card-errors" role="alert"></div>
                 </div>              
+            </div>
+            <div class="row text-center p-3">
+                <div id="form-buttons" class="col">
+                    <button id="submit-button" class="btn btn-primary" type="submit">submit</button>
+                    <button class="btn btn-warning" type="reset">reset</button>
+                </div>
             </div>
         </form>
     </div>
@@ -37,6 +50,15 @@
     {% else %}
     
     {% endif %}
-</div>
-   
+</div>   
 {% endblock %}
+{% block postloadjs %}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'JS/checkout/stripe_elements.js' %}"></script>
+
+
+{{ block.super }}
+
+{% endblock %}
+
