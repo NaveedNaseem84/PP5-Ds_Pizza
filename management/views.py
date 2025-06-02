@@ -2,8 +2,9 @@ from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from.forms import NewPizzaForm, NewDealForm, NewExtraForm
-from menu.views import menu_view
 from menu.models import Deal, Pizza, Extras
+from menu.views import menu_view
+
 
 def management_view(request):
 

@@ -3,14 +3,19 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Deal, Pizza, Extras
 
-# Create your views here.
 
 
 def menu_view(request):
 
-    deal = Deal.objects.filter(active='Yes')
-    pizza = Pizza.objects.filter(active="Yes")
-    extra = Extras.objects.filter(active='Yes')
+    if request.user.is_staff:
+        deal = Deal.objects.all()
+        pizza = Pizza.objects.all()
+        extra = Extras.objects.all()
+        
+    else:
+        deal = Deal.objects.filter(active='Yes')
+        pizza = Pizza.objects.filter(active="Yes")
+        extra = Extras.objects.filter(active='Yes')
 
     filter = request.GET.get('allergen-filter')
     

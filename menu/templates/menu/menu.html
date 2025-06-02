@@ -31,7 +31,7 @@
                         <div class="card mb-3">
                             <div class="card-body brand-text text-center">
                                 {% if deal.pizza.is_veg == "Yes" and deal.pizza.is_gf == "Yes" %}
-                                <div class="container text-end">
+                                <div class="container text-center">
                                     <div class="row">
                                         <div class="col">
                                             <p class="allergen-circle">VG</p>
@@ -67,6 +67,7 @@
                                 <a href="{% url 'product_detail' deal.id %}?item_type=deal"
                                     class="btn btn-outline-dark">View</a>
                                 {% if request.user.is_authenticated and request.user.is_superuser %}
+                                <p><strong>Status: {{deal.active}}</strong></p>
                                 <a href="{% url 'update_product' deal.id %}?item_type=deal"
                                     class="btn btn-warning">Update</a>
                                 <button class="btn btn-danger btn-delete-booking" data-product-id="{{ deal.id}}"
@@ -125,6 +126,7 @@
                                 <a href="{% url 'product_detail' item.id %}?item_type=pizza"
                                     class="btn btn-outline-dark">View</a>
                                 {% if request.user.is_authenticated and request.user.is_superuser %}
+                                <p><strong>Status: {{item.active}}</strong></p>
                                 <a href="{% url 'update_product' item.id %}?item_type=pizza"
                                     class="btn btn-warning">update</a>
                                 <button class="btn btn-danger btn-delete-booking" data-product-id="{{ item.id}}"
@@ -153,6 +155,7 @@
                         <a href="{% url 'product_detail' side.id %}?item_type=side"
                             class="btn btn-outline-dark">View</a>
                         {% if request.user.is_authenticated and request.user.is_superuser %}
+                        <p><strong>Status: {{side.active}}</strong></p>
                         <a href="{% url 'update_product' side.id %}?item_type=side"
                             class="btn btn-warning mt-1">Update</a>
                         <button class="btn btn-danger btn-delete-booking" data-product-id="{{ side.id}}"
@@ -177,6 +180,7 @@
                         <a href="{% url 'product_detail' drink.id %}?item_type=drink"
                             class="btn btn-outline-dark">View</a>
                         {% if request.user.is_authenticated and request.user.is_superuser %}
+                        <p><strong>Status: {{drink.active}}</strong></p>
                         <a href="{% url 'update_product' drink.id %}?item_type=drink"
                             class="btn btn-warning mt-1">Update</a>
                         <button class="btn btn-danger btn-delete-booking" data-product-id="{{ drink.id}}"
@@ -202,6 +206,7 @@
                         <a href="{% url 'product_detail' dessert.id %}?item_type=dessert"
                             class="btn btn-outline-dark mt-1">View</a>
                         {% if request.user.is_authenticated and request.user.is_superuser %}
+                        <p><strong>Status: {{dessert.active}}</strong></p>
                         <a href="{% url 'update_product' dessert.id %}?item_type=dessert"
                             class="btn btn-warning mt-1">Update</a>
 
