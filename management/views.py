@@ -10,18 +10,37 @@ def management_view(request):
 
     return render(request, 'management/management.html')
 
-def add_pizza(request):
+def add_product(request):
     """
-    Creates a new instance of a pizza once
+    Creates a new instance of a product.
+    Deal, side or Dessert passed in as an item type on URL retrieval
     """
 
     ## added to show proof of concept only, expand on in readme
     if not request.user.is_staff:
         messages.add_message(request, messages.ERROR,'Please login') 
         return redirect(menu_view)
+    
+   
+    product_form = None  
+    product = None      
+    item= request.GET.get('item_type')
+    print(item)
+    
+    if item =="deal":        
+        product_form = NewDealForm
+        product = "New Deal"
+    
+    elif item =="pizza":       
+        product_form = NewPizzaForm
+        product = "New Pizza"
+    
+    elif item =="extra":       
+        product_form = NewExtraForm   
+        product = "New Side, Drink or Dessert"
 
     if request.method =="POST":
-        form = NewPizzaForm(request.POST)
+        form = product_form(request.POST)
 
         if form.is_valid():
             form.save()
@@ -29,74 +48,16 @@ def add_pizza(request):
         
             return redirect(menu_view)       
     else:
-        form = NewPizzaForm()
+        form = product_form()
 
     context = {
         "form": form,
-        "product":"Pizza"
+        "product":product
     }
 
     template = "management/product_admin.html"
 
     return render(request, template, context)
-
-def add_deal(request):
-   """
-   Creates a new instance of a deal once valid
-   """ 
-   ## added to show proof of concept only, expand on in readme
-   if not request.user.is_staff:
-        messages.add_message(request, messages.ERROR,'Please login') 
-        return redirect(menu_view)
-   
-   if request.method =="POST":
-        form = NewDealForm(request.POST)
-
-        if form.is_valid():
-            form.save()
-            messages.add_message(request, messages.SUCCESS,'Deal added') 
-        
-            return redirect(menu_view)
-   else:
-        form = NewDealForm()
-
-   context = {
-        "form": form,
-        "product":"Deal"
-    }
-
-   template = "management/product_admin.html"
-
-   return render(request, template, context)
-
-def add_extra(request):
-   """
-   Creates a new instance of a side, drink or dessert once valid
-   """ 
-   ## added to show proof of concept only, expand on in readme
-   if not request.user.is_staff:
-        messages.add_message(request, messages.ERROR,'Please login') 
-        return redirect(menu_view)
-   
-   if request.method =="POST":
-        form = NewExtraForm(request.POST)
-
-        if form.is_valid():
-            form.save()
-            messages.add_message(request, messages.SUCCESS,'Side, Drink or Dessert added') 
-        
-            return redirect(menu_view)
-   else:
-        form = NewExtraForm()
-
-   context = {
-        "form": form,
-        "product":"Side, Drink or Dessert"
-    }
-
-   template = "management/product_admin.html"
-
-   return render(request, template, context)
 
 
 def update_product(request, product_id):

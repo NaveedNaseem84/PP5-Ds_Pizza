@@ -60,9 +60,9 @@
                             <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                                 href="{% url 'account_logout' %}">Logout</a>
                             <!-- come back to and configure as drop down!-->
-                            <a href="{% url 'add_pizza' %}?" class="dropdown-item text-center"> Add Pizza</a>
-                             <a href="{% url 'add_deal' %}" class="dropdown-item text-center"> Add Deal</a>
-                             <a href="{% url 'add_extra' %}" class="dropdown-item text-center"> Add Extra</a>
+                            <a href="{% url 'add_product' %}?item_type=pizza" class="dropdown-item text-center"> Add Pizza</a>
+                             <a href="{% url 'add_product' %}?item_type=deal" class="dropdown-item text-center"> Add Deal</a>
+                             <a href="{% url 'add_product' %}?item_type=extra" class="dropdown-item text-center"> Add Extra</a>
                         </li>
                         
                         {% else %}
