@@ -63,6 +63,10 @@ def checkout_view(request):
         current_bag = cart_contents(request)
         total = current_bag['grand_total']
 
+        if total == 0:
+            messages.info(request, "Nothing to checkout at the moment")     
+            return redirect(reverse('menu'))
+        
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
