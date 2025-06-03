@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}Management{% endblock %}
+{% block content %}
+
+<div class="container-fluid secondary-bg d-flex flex-column h-100">
+    <div class="container card col-12 col-md-4 bg-light text-dark pt-2 mt-5">
+ <div class="col-12 col-md-12 bg-light text-dark pt-3">
+            <section>
+                <h1 class="text-center">Great stuff - we have your order</h1>
+                <hr>           
+                <p>For: <Strong>{{order_name}}</Strong></p>
+                <p>Order #: <Strong>{{order_ref}}</Strong></p>
+                <p class="text-center">Please make a note of this as you will need it when collecting</p>
+
+            </section>
+            <div class="mb-5 text-center">
+                <a href="{% url 'menu' %}" class="sm-4 btn btn-warning mr-3 justify-content-end">Back to Menu</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

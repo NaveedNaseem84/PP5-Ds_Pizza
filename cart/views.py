@@ -32,56 +32,7 @@ def add_to_bag(request):
         request, messages.SUCCESS,
         'Item added') 
     request.session['bag'] = bag
-    print(bag)
-    print(bag.keys())
 
-    """
-    if item_type == 'pizza':
-        pizza_bag = request.session.get('pizza_bag', {})
-        if item_id in pizza_bag:
-            pizza_bag[item_id] += quantity            
-        
-        else:          
-            pizza_bag[item_id] = quantity
-        request.session['pizza_bag'] = pizza_bag
-
-    elif item_type == 'deal':
-        deal_bag = request.session.get('deal_bag', {})
-        if item_id in deal_bag:
-            deal_bag[item_id] += quantity 
-
-        else:           
-            deal_bag[item_id] = quantity
-            
-        request.session['deal_bag'] = deal_bag
-
-    elif item_type == 'side':
-        side_bag = request.session.get('side_bag', {})
-        if item_id in side_bag:
-            side_bag[item_id] += quantity
-
-        else:            
-            side_bag[item_id] = quantity
-        request.session['side_bag'] = side_bag
-
-    elif item_type == 'drink':
-        drink_bag = request.session.get('drink_bag', {})
-        if item_id in drink_bag:
-            drink_bag[item_id] += quantity
-
-        else:            
-            drink_bag[item_id] = quantity
-        request.session['drink_bag'] = drink_bag
-
-    elif item_type == 'dessert':
-        dessert_bag = request.session.get('dessert_bag', {})
-        if item_id in dessert_bag:
-            dessert_bag[item_id] += quantity
-
-        else:            
-            dessert_bag[item_id] = quantity
-        request.session['dessert_bag'] = dessert_bag
-    """
     return redirect(menu_view)
 
 def increase_from_bag(request, item_id, item_type):

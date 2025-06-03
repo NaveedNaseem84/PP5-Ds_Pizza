@@ -30,20 +30,7 @@ class PizzaOrder(models.Model):
                               blank=False,
                               default="Ordered")
     
-    
-    # generate order and save method: adapted from CI ado content
-    # reference in readme.md
-
-    def _generate_order_number(self):
-
-        return uuid.uuid4()
-    
-    def save(self, *args, **kwargs):
-
-        if not self.order_ref:
-            self.order_ref = 1111 
-        super().save(*args, **kwargs)
-    
+   
     def __str__(self):
         return f"Order for {self.name}"
 

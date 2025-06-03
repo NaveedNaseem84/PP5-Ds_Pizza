@@ -7,23 +7,31 @@ from menu.models import Pizza, Deal, Extras
 from cart.contexts import cart_contents
 
 import stripe
+import uuid
 
 def checkout_view(request):
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    order_total = 0
+    
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
+        order_no_length = 10
+        order_num = str(uuid.uuid4()).replace('-', '')[:order_no_length]  
         order_form = orderForm(data=request.POST)
-        if order_form.is_valid():            
+
+        if order_form.is_valid():
+
             order = PizzaOrder.objects.create(
+            order_ref = f"DS-{order_num}",
             name =  request.POST.get('name'),
             phone = request.POST.get('phone'),
             email = request.POST.get('email'),
-            )
-            order_total = 0
+            )            
+
             for item_type, items in bag.items():
                 for item_id, item_quantity in items.items():
                     quantity = item_quantity['quantity']
@@ -45,27 +53,48 @@ def checkout_view(request):
             order.order_total = order_total
             order.save()
             messages.add_message( request, messages.SUCCESS,'Order Created')
-            return redirect(checkout_view)
+            return redirect(reverse('success_page', args=[order.order_ref]))
+        else:
+            messages.add_message( request, messages.ERROR,'There seems to be an issue on the form.')
     else:
  
         bag = request.session.get('bag', {})
 
         current_bag = cart_contents(request)
-        #total = current_bag['grand_total']
+        total = current_bag['grand_total']
 
-       # stripe_total = round(total * 100)
-       # stripe.api_key = stripe_secret_key
-       # intent = stripe.PaymentIntent.create(
-              #  amount=stripe_total,
-           # currency=settings.STRIPE_CURRENCY,
-          #  )
+        stripe_total = round(total * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+                amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+            )
  
         order_form = orderForm()
     template = 'checkout/checkout.html'
     context = {
                 'order_form': order_form,
-               # 'stripe_public_key': stripe_public_key,
-                #'client_secret': intent.client_secret,
+                'stripe_public_key': stripe_public_key,
+                'client_secret': intent.client_secret,
+                
             }
         
+    return render(request, template, context)
+
+def success_page(request, order_ref):
+    """
+    redirect to success page once submission has been completed
+    """
+    order = get_object_or_404(PizzaOrder, order_ref=order_ref)
+       
+    if 'bag' in request.session:
+        del request.session['bag']
+
+    template = 'checkout/success.html'
+    context = {
+                'order_ref': order_ref,
+                'order_name': order.name,
+
+                
+            }
     return render(request, template, context)
