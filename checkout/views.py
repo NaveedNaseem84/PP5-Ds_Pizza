@@ -86,7 +86,10 @@ def success_page(request, order_ref):
     redirect to success page once submission has been completed
     """
     order = get_object_or_404(PizzaOrder, order_ref=order_ref)
-       
+    item_count = 0
+    for item in order.pizzaorderlineitems.all():
+        item_count += item.quantity
+    
     if 'bag' in request.session:
         del request.session['bag']
 
@@ -94,6 +97,8 @@ def success_page(request, order_ref):
     context = {
                 'order_ref': order_ref,
                 'order_name': order.name,
+                'order':order,
+                'item_count':item_count
 
                 
             }
