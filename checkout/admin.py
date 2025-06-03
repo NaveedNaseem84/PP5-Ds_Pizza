@@ -26,14 +26,25 @@ class PizzaOrderAdmin(admin.ModelAdmin):
         'order_ref',
         'date',
         'order_total',
+        'billing_name',
+        'address_line_1',
+        'address_line_2',
+        'town',
+        'postcode',
     )
 
     fields = (
         'order_ref',
         'date',
         'name',
-        'email',
         'phone',
+        'email',
+        'billing_name',
+        'address_line_1',
+        'address_line_2',
+        'town',
+        'postcode',
+        
         'order_total',
         'status',
     )

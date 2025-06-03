@@ -14,7 +14,8 @@ class PizzaOrder(models.Model):
     ]
 
     order_ref = models.CharField(max_length=32, null=False, editable=False)
-    name = models.CharField(max_length=40, null=False, blank=False)
+    name = models.CharField(max_length=40, null=False, blank=False)   
+    
     phone = models.CharField(
         max_length=11,
         validators=[RegexValidator(
@@ -23,6 +24,12 @@ class PizzaOrder(models.Model):
             code="invalid_number")]
     )
     email = models.EmailField(null=False, blank=False)
+    billing_name = models.CharField(max_length=60, null=False, blank=False, default="")
+    address_line_1 = models.CharField(max_length=100, null=False, blank=False, default="")
+    address_line_2 = models.CharField(max_length=100, null=True, blank=True)
+    town = models.CharField(max_length=25, null=False, blank=False, default="")    
+    postcode = models.CharField(max_length=10, null=False, blank=False, default="")
+
     date = models.DateTimeField(auto_now=True)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0.00)
     status = models.CharField(choices=STATUS,

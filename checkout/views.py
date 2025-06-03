@@ -30,6 +30,13 @@ def checkout_view(request):
             name =  request.POST.get('name'),
             phone = request.POST.get('phone'),
             email = request.POST.get('email'),
+            billing_name = request.POST.get('billing_name'),
+            address_line_1 = request.POST.get('address_line_1'),
+            address_line_2 = request.POST.get('address_line_2'),
+            town = request.POST.get('town'),
+            postcode = request.POST.get('postcode'),          
+
+
             )            
 
             for item_type, items in bag.items():
