@@ -1,5 +1,6 @@
 from django import forms
 from menu.models import Pizza, Deal, Extras
+from checkout.models import PizzaOrder
 
 class NewPizzaForm(forms.ModelForm):
     """
@@ -63,4 +64,16 @@ class NewExtraForm(forms.ModelForm):
             "price": forms.NumberInput(attrs={'style': 'width:100%'}),           
         }
 
+class StatusForm(forms.ModelForm):
+    """
+    An instance of the Pizza Order 
+    """
 
+    class Meta:
+
+        model = PizzaOrder
+
+        fields = (          
+            "status",
+        )
+     

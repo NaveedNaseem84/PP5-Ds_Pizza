@@ -1,7 +1,7 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from.forms import NewPizzaForm, NewDealForm, NewExtraForm
+from.forms import NewPizzaForm, NewDealForm, NewExtraForm, StatusForm
 from menu.models import Deal, Pizza, Extras
 from checkout.models import PizzaOrder
 from menu.views import menu_view
@@ -21,6 +21,7 @@ def management_view(request):
     ordered_count = orders.filter(status="Ordered").count()
     preparing_count = orders.filter(status="Preparing").count()
     ready_count = orders.filter(status="Ready").count()
+
  
     template = "management/management.html"
     context = {
@@ -117,13 +118,40 @@ def update_product(request, product_id):
             return HttpResponseRedirect(reverse(menu_view))
     else:
         form = product_form( instance=product)
-
+    
+    template = "management/product_admin.html"
     context = {
         "form": form,
         "product": "Update",
         "item": item
     }
 
-    template = "management/product_admin.html"
+   
     return render(request, template, context)
+
+def update_order_status(request, order_id):
+
+    if not request.user.is_staff:
+        messages.add_message(request, messages.ERROR, 'Please login as an admin')
+        return redirect(menu_view)
+        
+    product = get_object_or_404(PizzaOrder, id=order_id)
+    form =StatusForm(request.POST, instance=product)
+    if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS,'Status updated') 
+        
+            return redirect(management_view)
+    else:
+        form = StatusForm( instance=product)
+ 
+    template = "management/update_status.html"
+    context = {
+       
+        "form": form,
+        "product": product,
+ 
+    }
+
+    return render(request, template, context) 
 
