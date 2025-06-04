@@ -67,7 +67,12 @@ def menu_view(request):
 def product_detail(request, product_id):
     selected_product = None    
     item= request.GET.get('item_type')
+    
 
+    deal = Deal.objects.filter(active='Yes')
+    pizza = Pizza.objects.filter(active="Yes")
+    extra = Extras.objects.filter(active='Yes')    
+    
     if item =="pizza":
         selected_product = get_object_or_404(Pizza, pk=product_id)
     elif item=="deal":
@@ -77,10 +82,14 @@ def product_detail(request, product_id):
 
     context = {
         "selected_product": selected_product,
-        "item": item
+        "item": item,
+        "deals": deal,
+        "pizza": pizza,
+        "extras": extra
+        
     }
 
-    return render(request, 'menu/menu_detail.html', context)
+    return render(request, 'menu/menu.html', context)
 
 def menu_increase_from_bag(request, item_id, item_type):
     """
