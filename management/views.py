@@ -3,12 +3,35 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from.forms import NewPizzaForm, NewDealForm, NewExtraForm
 from menu.models import Deal, Pizza, Extras
+from checkout.models import PizzaOrder
 from menu.views import menu_view
 
 
 def management_view(request):
+    """
+    dashboard to show the all current orders with status
+    """
 
-    return render(request, 'management/management.html')
+
+    if not request.user.is_staff:
+        messages.add_message(request, messages.ERROR,'Please login') 
+        return redirect(reverse('menu'))
+
+    orders = PizzaOrder.objects.prefetch_related("pizzaorderlineitems").filter(status__in=["Ordered", "Preparing","Ready",])
+    ordered_count = orders.filter(status="Ordered").count()
+    preparing_count = orders.filter(status="Preparing").count()
+    ready_count = orders.filter(status="Ready").count()
+ 
+    template = "management/management.html"
+    context = {
+        "orders": orders,
+        "order_count": ordered_count,
+        "preparing_count": preparing_count,
+        "ready_count": ready_count,
+ 
+    }
+
+    return render(request, template, context)
 
 def add_product(request):
     """
