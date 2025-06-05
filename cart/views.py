@@ -46,14 +46,8 @@ def increase_from_bag(request, item_id, item_type):
    
     if item_id in bag[item_type]:
         bag[item_type][item_id]['quantity'] += 1
+        product = determine_product_type(item_type, item_id)
 
-        if item_type =="pizza":
-            product = get_object_or_404(Pizza, pk=item_id)
-        elif item_type =="deal":
-            product = get_object_or_404(Deal, pk=item_id) 
-        elif item_type =="side" or item_type =="drink" or item_type =="dessert":
-            product = get_object_or_404(Extras, pk=item_id) 
-        
         messages.add_message(request, messages.SUCCESS,f"'{product}'+ 1") 
 
     request.session['bag'] = bag  
@@ -63,7 +57,7 @@ def increase_from_bag(request, item_id, item_type):
 
 def decrease_from_bag(request, item_id, item_type):
     """
-    Decrease qunattiy of selected item in bag by 1
+    Decrease quantity of selected item in bag by 1
     Display message to show which item has been decreased.
     Display message when the cart is empty"
     """    
@@ -72,12 +66,7 @@ def decrease_from_bag(request, item_id, item_type):
     bag = request.session.get('bag', {})
     if item_id in bag[item_type]:
         bag[item_type][item_id]['quantity'] -= 1
-        if item_type =="pizza":
-            product = get_object_or_404(Pizza, pk=item_id)
-        elif item_type =="deal":
-            product = get_object_or_404(Deal, pk=item_id) 
-        elif item_type =="side" or item_type =="drink" or item_type =="dessert":
-            product = get_object_or_404(Extras, pk=item_id) 
+        product = determine_product_type(item_type, item_id)
         
         messages.add_message(request, messages.SUCCESS,f"'{product}'- 1") 
 
@@ -87,3 +76,13 @@ def decrease_from_bag(request, item_id, item_type):
     request.session['bag'] = bag
 
     return redirect(cart_view)
+
+def determine_product_type(item_type, item_id):
+
+    if item_type =="pizza":
+            return get_object_or_404(Pizza, id=item_id)
+    elif item_type =="deal":
+            return get_object_or_404(Deal, id=item_id) 
+    elif item_type =="side" or item_type =="drink" or item_type =="dessert":
+            return get_object_or_404(Extras, id=item_id)
+    return None 
