@@ -248,6 +248,18 @@ a::after {
   font-size: 160%;
 }
 
+/*mail chimp*/
+#mc_embed_signup {
+  background: transparent;
+  text-align: center !important;
+  font: 18px Helvetica, Arial, sans-serif;
+  width: 350px !important;
+}
+
+  #mce-success-response {
+    color: darkorange !important;
+    width: 100%;
+  }
 /* generic styling*/
 
 .secondary-bg {
