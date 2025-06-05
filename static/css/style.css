@@ -61,7 +61,7 @@ footer a:hover,  a::after {
 .navbar-logo {
   padding: 5px;
   font-weight: bold;
-  font-size: 130%;
+  font-size: 120%;
   background-color: black !important;
   color: darkorange !important;
 }
@@ -159,7 +159,7 @@ footer a:hover,  a::after {
 
 .intro-section {
   background-color: black;
-  margin-top: 5%;
+  margin-top: 7%;
   border-radius: 25px;
   opacity: 0.9;
 }
@@ -187,7 +187,7 @@ footer a:hover,  a::after {
 .card {
   background-color: white !important;
   color: black !important;
-  opacity: 0.8;
+  opacity: 0.9;
   border: 4px orange solid;
   border-radius: 15px;
 }
@@ -203,6 +203,22 @@ footer a:hover,  a::after {
   border-radius: 50px;
   padding: 5px;
   border: 2px solid white; 
+
+}
+
+.item-heading-deals {
+
+  background-color: orange;
+  color: black;
+
+}
+
+.item-heading-pizzas {
+
+  background-color: green;
+  color: white;
+    padding-top: 5px;
+  padding-bottom:5px;
 
 }
 .allergen-circle {
