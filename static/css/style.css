@@ -215,10 +215,10 @@ footer a:hover,  a::after {
 
 .item-heading-pizzas {
 
-  background-color: green;
+  background-color: #284f38;
   color: white;
-    padding-top: 5px;
-  padding-bottom:5px;
+  padding: 5px;
+
 
 }
 .allergen-circle {

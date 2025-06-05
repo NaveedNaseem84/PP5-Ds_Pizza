@@ -136,9 +136,9 @@
                                 </div>
                                 {% else %}
                                 <p class="allergen-circle-none">&nbsp</p>
-                                <p class="pt-1"><b>&nbsp</b></p>
+                                <p class=><b>&nbsp</b></p>
                                 {% endif %}
-                                <h3 class="card-title">{{ item.name }}</h3>
+                                <h3 class="item-heading-pizzas">{{ item.name }}</h3>
                                 <p class="card-text"><b>£{{ item.price }}</b></p>
                                 <a href="{% url 'product_detail' item.id %}?item_type=pizza"
                                     class="btn btn-warning">View Pizza</a>
