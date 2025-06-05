@@ -6,16 +6,14 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-
 }
 
 main {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: black;  
+  background-color: black;
   color: white !important;
-
 }
 
 #django-messages {
@@ -26,14 +24,12 @@ main {
 /* footer styling*/
 
 .footer {
-  background-color: black; 
+  background-color: black;
 }
 
 .footer li {
-padding-left: 20px;
-padding-right: 20px;
-
-
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .footer i {
@@ -45,7 +41,8 @@ footer a {
   color: white;
 }
 
-footer a:hover,  a::after {
+footer a:hover,
+a::after {
   color: inherit;
 }
 
@@ -61,31 +58,30 @@ footer a:hover,  a::after {
 .navbar-logo {
   padding: 5px;
   font-weight: bold;
-  font-size: 130%;
+  font-size: 120%;
   background-color: black !important;
   color: darkorange !important;
 }
 
-#messages{
+#messages {
   background-color: black;
   color: white;
-  height:50px;
+  height: 50px;
 }
 
 /* signup template*/
 
-#hint_id_password1{
+#hint_id_password1 {
   color: white;
 }
 
 /* Index/main page*/
 
 #main-index-bg {
-  background: url('/static/images/main-index-bg.webp');
+  background: url("/static/images/main-index-bg.webp");
   background-attachment: fixed;
   padding: 1%;
   opacity: 0.9;
-
 }
 
 .main-logo {
@@ -159,7 +155,7 @@ footer a:hover,  a::after {
 
 .intro-section {
   background-color: black;
-  margin-top: 5%;
+  margin-top: 7%;
   border-radius: 25px;
   opacity: 0.9;
 }
@@ -176,7 +172,8 @@ footer a:hover,  a::after {
   text-decoration: none;
 }
 
-#lets-go a:hover,  a::after {
+#lets-go a:hover,
+a::after {
   color: inherit;
   font-weight: bold;
   font-style: italic;
@@ -187,23 +184,31 @@ footer a:hover,  a::after {
 .card {
   background-color: white !important;
   color: black !important;
-  opacity: 0.8;
+  opacity: 0.9;
   border: 4px orange solid;
   border-radius: 15px;
 }
 
-.card-modal { 
+.card-modal {
   opacity: 1;
- 
 }
 
 .product-heading {
-
- background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 50px;
   padding: 5px;
-  border: 2px solid white; 
+  border: 2px solid white;
+}
 
+.item-heading-deals {
+  background-color: orange;
+  color: black;
+}
+
+.item-heading-pizzas {
+  background-color: #284f38;
+  color: white;
+  padding: 5px;
 }
 .allergen-circle {
   height: 30px;
@@ -216,11 +221,10 @@ footer a:hover,  a::after {
   border: 2px green solid;
 }
 
-
 .allergen-circle-none {
   height: 30px;
   width: 30px;
-  background-color: none;
+  background-color: transparent;
   border-radius: 50%;
   padding-top: 2px;
   display: inline-block;
@@ -236,18 +240,20 @@ footer a:hover,  a::after {
   color: black;
   padding: 15px;
   font-size: 90%;
-
 }
 
+/*about us*/
 
+#aboutus {
+  font-size: 160%;
+}
 
 /* generic styling*/
 
 .secondary-bg {
-  background: url('/static/images/secondary-bg.webp');
+  background: url("/static/images/secondary-bg.webp");
   background-attachment: fixed;
   padding: 1%;
-
 }
 
 .brand-color {
@@ -279,7 +285,8 @@ footer a:hover,  a::after {
     padding: 0;
   }
 
-  .main-logo, .main-logo-credentials {
+  .main-logo,
+  .main-logo-credentials {
     margin: auto;
     height: 150px;
   }
@@ -292,12 +299,21 @@ footer a:hover,  a::after {
   }
 
   .intro-section {
-  border: 2px darkorange solid;
+    border: 2px darkorange solid;
+  }
 
-}
+  .secondary-bg {
+    background-image: none;
+  }
 
-.secondary-bg {
-  background-image: none;
-}
+  #aboutus {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    font-size: 120%;
+  }
 
+  #ds-pizza-making {
+    display: none;
+  }
 }
