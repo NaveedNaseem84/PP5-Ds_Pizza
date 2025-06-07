@@ -4,8 +4,6 @@ from django.contrib import messages
 from .models import Deal, Pizza, Extras
 from cart.utils import increase_qty, decrease_qty, determine_product_type, max_allowed_in_cart
 
-
-
 def menu_view(request):
     
     filter = request.GET.get('allergen-filter')
@@ -20,8 +18,7 @@ def menu_view(request):
         pizza = Pizza.objects.filter(active="Yes")
         extra = Extras.objects.filter(active='Yes')
 
-    
-    
+
     if filter =="all":
         deal = deal
         pizza = pizza
@@ -55,8 +52,6 @@ def menu_view(request):
         request, messages.INFO,
         'Please select an option first')
     
-    
-
     template = "menu/menu.html"
     context = {
         "deals": deal,
