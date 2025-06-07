@@ -84,7 +84,7 @@
                                 <p><b>Only £{{ deal.price }}</b></p>
                                 <a href="{% url 'product_detail' deal.id %}?item_type=deal" class="btn btn-warning">View
                                     Deal</a>
-                                {% if request.user.is_authenticated and request.user.is_superuser %}
+                                {% if request.user.is_authenticated and request.user.is_staff %}
                                 <p><strong>Active: {{deal.active}}</strong></p>
                                 <a href="{% url 'update_product' deal.id %}?item_type=deal"
                                     class="btn btn-warning">Update</a>
@@ -146,7 +146,7 @@
                                 <p class="card-text"><b>£{{ item.price }}</b></p>
                                 <a href="{% url 'product_detail' item.id %}?item_type=pizza"
                                     class="btn btn-warning">View Pizza</a>
-                                {% if request.user.is_authenticated and request.user.is_superuser %}
+                                {% if request.user.is_authenticated and request.user.is_staff %}
                                 <p><strong>Active: {{item.active}}</strong></p>
                                 <a href="{% url 'update_product' item.id %}?item_type=pizza"
                                     class="btn btn-warning">update</a>
@@ -173,7 +173,7 @@
                         <h4 class="mt-3">{{ side.name }}</h4>
                         <p><b>£{{ side.price }}</b></p>
                         <a href="{% url 'product_detail' side.id %}?item_type=side" class="btn btn-warning">View</a>
-                        {% if request.user.is_authenticated and request.user.is_superuser %}
+                        {% if request.user.is_authenticated and request.user.is_staff %}
                         <p><strong>Active: {{side.active}}</strong></p>
                         <a href="{% url 'update_product' side.id %}?item_type=side" class="btn btn-warning">Update</a>
                         <button class="btn btn-danger btn-delete-booking" data-product-id="{{ side.id}}"
@@ -196,7 +196,7 @@
                         <h4 class=" mt-3">{{ drink.name }}</h4>
                         <p><b>£{{ drink.price }}</b></p>
                         <a href="{% url 'product_detail' drink.id %}?item_type=drink" class="btn btn-warning">View</a>
-                        {% if request.user.is_authenticated and request.user.is_superuser %}
+                        {% if request.user.is_authenticated and request.user.is_staff %}
                         <p><strong>Active: {{drink.active}}</strong></p>
                         <a href="{% url 'update_product' drink.id %}?item_type=drink" class="btn btn-warning">Update</a>
                         <button class="btn btn-danger btn-delete-booking" data-product-id="{{ drink.id}}"
@@ -221,7 +221,7 @@
                         <p><b>£{{ dessert.price }}</b></p>
                         <a href="{% url 'product_detail' dessert.id %}?item_type=dessert"
                             class="btn btn-warning mt-1">View</a>
-                        {% if request.user.is_authenticated and request.user.is_superuser %}
+                        {% if request.user.is_authenticated and request.user.is_staff %}
                         <p><strong>Active: {{dessert.active}}</strong></p>
                         <a href="{% url 'update_product' dessert.id %}?item_type=dessert"
                             class="btn btn-warning">Update</a>

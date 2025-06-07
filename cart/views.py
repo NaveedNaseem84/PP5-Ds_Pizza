@@ -1,8 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.contrib import messages
-from menu.models import Pizza, Deal, Extras
 from menu.views import menu_view
-from.utils import increase_qty, decrease_qty
+from.utils import increase_qty, decrease_qty, max_qty_in_cart, max_new_product_qty, max_allowed_in_cart
 
 def cart_view(request):
 
@@ -20,12 +19,20 @@ def add_to_bag(request):
     if item_type not in bag:
         bag[item_type] = {}
 
+
     if item_id in bag[item_type]:
+        if max_qty_in_cart(request, item_id, item_type):
+            return redirect(menu_view)
         bag[item_type][item_id]['quantity'] += quantity
+        
         messages.add_message(
         request, messages.SUCCESS,
         'Item quantity updated') 
     else:
+
+        if max_new_product_qty(request):
+            return redirect(menu_view) 
+
         bag[item_type][item_id] = {
             'quantity': quantity,
         }
@@ -41,6 +48,10 @@ def increase_from_bag(request, item_id, item_type):
     Increase quantity of selected item in bag
     Display message to show which item has been updated.    """
 
+    
+    if max_allowed_in_cart(request, item_id, item_type):
+            return redirect(cart_view)    
+
     increase_qty(request, item_id, item_type)
   
     return redirect(cart_view)
@@ -55,3 +66,5 @@ def decrease_from_bag(request, item_id, item_type):
     decrease_qty(request, item_id, item_type)
 
     return redirect(cart_view)
+
+

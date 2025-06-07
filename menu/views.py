@@ -2,7 +2,7 @@ from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Deal, Pizza, Extras
-from cart.utils import increase_qty, decrease_qty, determine_product_type
+from cart.utils import increase_qty, decrease_qty, determine_product_type, max_allowed_in_cart
 
 
 
@@ -96,6 +96,8 @@ def menu_increase_from_bag(request, item_id, item_type):
     """
     Increase quantity of selected item in bag
     Display message to show which item has been updated.    """
+    if max_allowed_in_cart(request, item_id, item_type):
+            return redirect(menu_view)    
 
     increase_qty(request, item_id, item_type)
   

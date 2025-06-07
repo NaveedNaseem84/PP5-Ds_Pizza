@@ -88,7 +88,7 @@
                             </ul>
                         </li>
 
-                        {% if request.user.is_authenticated and request.user.is_superuser %}
+                        {% if request.user.is_authenticated and request.user.is_staff %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="AdminnavbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">

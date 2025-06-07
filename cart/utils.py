@@ -48,3 +48,38 @@ def decrease_qty(request, item_id, item_type):
             del bag[item_type][item_id]
 
     request.session['bag'] = bag
+
+
+
+def max_qty_in_cart(request, item_id, item_type):
+
+    bag = request.session.get('bag', {})
+    quantity = int(request.POST.get('quantity'))
+
+    if bag[item_type][item_id]['quantity'] + quantity > 10:
+            messages.add_message(request, messages.INFO, "Maxiumum quantity of 10 allowed")
+            return True
+    return False
+
+def max_new_product_qty(request):
+     
+    quantity = int(request.POST.get('quantity'))
+    if quantity > 10:
+            messages.add_message(request, messages.INFO, "Maxiumum quantity of 10 allowed")
+            return True
+    return False
+
+
+def max_allowed_in_cart(request, item_id, item_type):
+    bag = request.session.get('bag', {})
+    if bag[item_type][item_id]['quantity'] > 9:
+        messages.add_message(request, messages.INFO, "Maxiumum quantity of 10 allowed")
+        return True
+    return False
+      
+      
+     
+
+
+
+     

@@ -1,5 +1,4 @@
-from django.shortcuts import get_object_or_404
-from menu.models import Pizza, Deal, Extras
+from .utils import determine_product_type
 
 def cart_contents(request):
 
@@ -17,13 +16,7 @@ def cart_contents(request):
           for item_id, item_quantity in items.items():
                 quantity = item_quantity['quantity']
                 
-                if item_type == "pizza":
-                    product = get_object_or_404(Pizza, pk = item_id)
-                elif item_type == "deal":
-                    product = get_object_or_404(Deal, pk=item_id)
-                elif item_type =="side" or item_type =="drink" or item_type=="dessert":
-                    product = get_object_or_404(Extras, pk=item_id)
-                
+                product = determine_product_type(item_type, item_id)                
                 total = quantity * product.price
                 bag_quantity += quantity
                 grand_total +=total
