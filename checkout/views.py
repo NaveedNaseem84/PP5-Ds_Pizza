@@ -3,8 +3,8 @@ from django.conf import settings
 from django.contrib import messages
 from .models import PizzaOrder, OrderLineItem
 from.forms import orderForm
-from menu.models import Pizza, Deal, Extras
 from cart.contexts import cart_contents
+from cart.utils import determine_product_type
 
 import stripe
 import uuid
@@ -35,19 +35,12 @@ def checkout_view(request):
             address_line_2 = request.POST.get('address_line_2'),
             town = request.POST.get('town'),
             postcode = request.POST.get('postcode'),          
-
-
             )            
 
             for item_type, items in bag.items():
                 for item_id, item_quantity in items.items():
                     quantity = item_quantity['quantity']
-                    if item_type == "pizza":
-                        product = get_object_or_404(Pizza, pk = item_id)
-                    elif item_type == "deal":
-                        product = get_object_or_404(Deal, pk=item_id)
-                    elif item_type =="side" or item_type =="drink" or item_type=="dessert":
-                        product = get_object_or_404(Extras, pk=item_id)
+                    product = determine_product_type(item_type, item_id)
                     line_total = product.price * quantity
                     OrderLineItem.objects.create(
                             order=order,

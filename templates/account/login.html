@@ -30,33 +30,30 @@
   {% include "socialaccount/snippets/login_extra.html" %}
 
   {% else %}
- 
+
   {% endif %}
 
 </div>
 <div class="row col-12 justify-content-center">
-        <div class=" col-11 md-offset-1 col-md-4">
-            <div class="row d-flex flex-column flex-md-row align-items-center p-4 mx-auto">
-                <div class="col-12 col-md-6 text-start mb-3 mb-md-0">
-                    <div class="main-logo-credentials mx-auto"></div>
-                </div>
-                <div class="col-11 col-md-6 text-left text-sm-center text-md-left">
-                    <div class="intro-text text-start">
-                       <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        {{ form | crispy }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class="primaryAction btn btn-warning" type="submit">{% trans "Sign In" %}</button>
-      </form>
-                    </div>
-                </div>
-            </div>
+  <div class=" col-11 md-offset-1 col-md-4">
+    <div class="row d-flex flex-column flex-md-row align-items-center p-4 mx-auto">
+      <div class="col-12 col-md-6 text-start mb-3 mb-md-0">
+        <div class="main-logo-credentials mx-auto"></div>
+      </div>
+      <div class="col-11 col-md-6 text-left text-sm-center text-md-left">
+        <div class="intro-text text-start">
+          <form class="login" method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %}
+            {{ form | crispy }}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button class="primaryAction btn btn-warning" type="submit">{% trans "Sign In" %}</button>
+          </form>
         </div>
+      </div>
     </div>
-
-
-
+  </div>
 </div>
+
 {% endblock content %}

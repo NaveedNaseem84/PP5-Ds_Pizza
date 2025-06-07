@@ -7,6 +7,8 @@ from cart.utils import increase_qty, decrease_qty, determine_product_type, max_a
 
 
 def menu_view(request):
+    
+    filter = request.GET.get('allergen-filter')
 
     if request.user.is_staff:
         deal = Deal.objects.all()
@@ -18,7 +20,7 @@ def menu_view(request):
         pizza = Pizza.objects.filter(active="Yes")
         extra = Extras.objects.filter(active='Yes')
 
-    filter = request.GET.get('allergen-filter')
+    
     
     if filter =="all":
         deal = deal

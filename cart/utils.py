@@ -2,8 +2,6 @@ from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from menu.models import Pizza, Deal, Extras
 
-
-
 def determine_product_type(item_type, item_id):
 
     if item_type =="pizza":
