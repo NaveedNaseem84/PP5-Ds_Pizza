@@ -8,9 +8,9 @@
             <div class="col-lg-8">
                 <!--Deals-->
                 <section id="deals" class="mb-4">
-                    <h1 class="brand-heading-text text-left pb-2">Deals, Pizzas, Sides, Drinks and more.</h1>
+                    <h1 class="brand-heading-text text-center p-3">Deals, Pizzas, Sides, Drinks and more.</h1>
                     <div class="row d-flex flex-md-row brand-heading-text text-center p-3">
-                       
+                      
                         <!--Sticky Cart-->
                         <div class="card sticky-cart d-none d-md-none d-lg-block text-center container-fluid">
                                 <p><strong>Cart Overview:</strong></p>
@@ -41,7 +41,7 @@
                                 {% endif %}                             
                         </div>
                         <!--filter-->
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-12">
                             <div class="brand-heading-text p-3">
                                 <form method="get" action="{% url 'menu' %}">
                                     <label for="allergen-filter">Filter:</label>
@@ -191,7 +191,7 @@
                         <div class="card-body brand-text text-center">
                             {% for side in extras %}
                             {% if side.category == "Sides" %}
-                            <h4 class="mt-3">{{ side.name }}</h4>
+                            <h3 class="mt-3">{{ side.name }}</h3>
                             <p><b>£{{ side.price }}</b></p>
                             <a href="{% url 'product_detail' side.id %}?item_type=side" class="btn btn-warning">View</a>
                             {% if request.user.is_authenticated and request.user.is_staff %}
@@ -215,7 +215,7 @@
                         <div class="card-body brand-text text-center">
                             {% for drink in extras %}
                             {% if drink.category == "Drinks" %}
-                            <h4 class=" mt-3">{{ drink.name }}</h4>
+                            <h3 class=" mt-3">{{ drink.name }}</h3>
                             <p><b>£{{ drink.price }}</b></p>
                             <a href="{% url 'product_detail' drink.id %}?item_type=drink"
                                 class="btn btn-warning">View</a>
@@ -241,7 +241,7 @@
                         <div class="card-body brand-text text-center">
                             {% for dessert in extras %}
                             {% if dessert.category == "Desserts" %}
-                            <h4 class=" mt-3">{{ dessert.name }}</h4>
+                            <h3 class=" mt-3">{{ dessert.name }}</h3>
                             <p><b>£{{ dessert.price }}</b></p>
                             <a href="{% url 'product_detail' dessert.id %}?item_type=dessert"
                                 class="btn btn-warning mt-1">View</a>
