@@ -1,0 +1,16 @@
+<div class="col-12 col-md-4 p-5">
+    <h2 class="text-center p-3">Preparing: {{preparing_count}}</h2>
+    {% for order in orders %}
+    {% if order.status == "Preparing" %}
+    <div class="card brand-text mb-4 p-3">
+        <h3>{{ order.name }}@ {{ order.date.time }}</h3>
+        <h4>#: {{ order.order_ref }}</h4>
+        <hr>
+        {% for item in order.pizzaorderlineitems.all %}
+        <h5>{{ item.quantity }} x {{ item.product }}</h5>
+        {% endfor %}
+        <a href="{% url 'update_order_status' order.id  %}" class="btn btn-warning">update</a>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>

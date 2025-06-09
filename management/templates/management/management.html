@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
-{% block extra_title %}Success{% endblock %}
+{% block extra_title %}Order Dashboard{% endblock %}
 {% block content %}
 
 <div class="container-fluid secondary-bg d-flex flex-column h-100">
@@ -9,62 +9,20 @@
     <div class="container">
         <div class="row text-center m-auto">
             <!-- Ordered -->
-            <div class="col-12 col-md-4 p-5">
-                <h2 class="text-center p-3">Ordered: {{order_count}}</h2>
-                {% for order in orders %}
-                {% if order.status == "Ordered" %}
-                <div class="card brand-text mb-4 p-3">
-                    <h3>{{ order.name }}@ {{ order.date.time }}</h3>
-                    <h4>#:</strong> {{ order.order_ref }}</h4>
-                    <hr>
-                    {% for item in order.pizzaorderlineitems.all %}
-                    <h5>{{ item.quantity }} x {{ item.product }}</h5>
-                    {% endfor %}
-                    <a href="{% url 'update_order_status' order.id  %}" class="btn btn-warning">update</a>
-                </div>
-                {% endif %}
-                {% endfor %}
-            </div>
+
+            {% include 'includes/ordered.html' %}           
 
             <!-- Preparing -->
-            <div class="col-12 col-md-4 p-5">
-                <h2 class="text-center p-3">Preparing: {{preparing_count}}</h2>
-                {% for order in orders %}
-                {% if order.status == "Preparing" %}
-                <div class="card brand-text mb-4 p-3">
-                    <h3>{{ order.name }}@ {{ order.date.time }}</h3>
-                    <h4>#:</strong> {{ order.order_ref }}</h4>
-                    <hr>
-                    {% for item in order.pizzaorderlineitems.all %}
-                    <h5>{{ item.quantity }} x {{ item.product }}</h5>
-                    {% endfor %}
-                     <a href="{% url 'update_order_status' order.id  %}" class="btn btn-warning">update</a>
-                </div>
-                {% endif %}
-                {% endfor %}
-            </div>
+
+            {% include 'includes/preparing.html' %}            
 
             <!-- Ready -->
-            <div class="col-12 col-md-4 p-5">
-                <h2 class="text-center p-3">Ready: {{ready_count}}</h2>
-                {% for order in orders %}
-                {% if order.status == "Ready" %}
-                <div class="card brand-text mb-4 p-3">
-                    <h3>{{ order.name }}@ {{ order.date.time }}</h3>
-                    <h4>#:</strong> {{ order.order_ref }}</h4>
-                    <hr>
-                    {% for item in order.pizzaorderlineitems.all %}
-                    <h5>{{ item.quantity }} x {{ item.product }}</h5>
-                    {% endfor %}
-                     <a href="{% url 'update_order_status' order.id  %}" class="btn btn-warning">update</a>
-                </div>
-                {% endif %}
-                {% endfor %}
-            </div>
+
+            {% include 'includes/ready.html' %}
+           
         </div>
     </div>
 
 </div>
-
 
 {% endblock %}
