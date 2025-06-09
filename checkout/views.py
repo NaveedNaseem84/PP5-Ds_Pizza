@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from cart.contexts import cart_contents
 from cart.utils import determine_product_type
 from .models import PizzaOrder, OrderLineItem
 from .forms import orderForm
+
 
 import stripe
 import uuid
@@ -116,5 +118,23 @@ def success_page(request, order_ref):
                 'item_count': item_count
 
 
+            }
+    return render(request, template, context)
+
+
+@login_required
+def my_orders(request):
+
+    user_orders = PizzaOrder.objects.filter(
+        user=request.user
+        ).order_by('-date')
+
+    order_count = user_orders.count()
+
+    template = 'checkout/myorders.html'
+    context = {     
+
+        'orders': user_orders,
+        'order_count': order_count
             }
     return render(request, template, context)

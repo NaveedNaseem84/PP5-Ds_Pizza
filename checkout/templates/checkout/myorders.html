@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}My orders{% endblock %}
+{% block content %}
+
+<div class="container-fluid secondary-bg d-flex flex-column h-100">
+    <div class="text-left pb-3">
+        <h1>My Orders</h1>
+        <h2>Your confirmed orders are listed below.</h2>
+        <h3>Total orders: {{ order_count }}</h3>
+        <hr>
+    </div>
+    {% if orders %}
+    {% for order in orders %}
+    <div class="card col-12 col-md-3 p-3 mb-4 mx-auto">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-start"><strong>For:</strong> {{ order.name }}</h3>
+                <hr>
+                <h4 class="text-end"><strong>Order Ref:</strong> {{ order.order_ref }}</h4>
+                <p class="text-end"><strong>Date:</strong> {{ order.date }}</p>
+                <div class="text-start">
+                    <h4>Items:</h4>
+                    {% for item in order.pizzaorderlineitems.all %}
+                    <h5>{{ item.quantity }} x {{ item.product }}</h5>
+                    {% endfor %}
+                    <hr>
+                </div>
+                <div class="text-start">
+                    <p><strong>Total:</strong> £{{ order.order_total }}</p>
+                    <h5 class="text-center">Status: <strong>{{ order.status }}</strong></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>You have no orders yet.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

@@ -328,4 +328,9 @@ a::after {
   #ds-pizza-making {
     display: none;
   }
+
+  #messages {
+    min-height: fit-content;
+ 
+  }
 }
