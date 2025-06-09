@@ -1,0 +1,19 @@
+<div class="card mb-3">
+    <div class="card-body brand-text text-center">
+        {% for dessert in extras %}
+        {% if dessert.category == "Desserts" %}
+        <h3 class=" mt-3">{{ dessert.name }}</h3>
+        <p><b>£{{ dessert.price }}</b></p>
+        <a href="{% url 'product_detail' dessert.id %}?item_type=dessert" class="btn btn-warning mt-1">View</a>
+        {% if request.user.is_authenticated and request.user.is_staff %}
+        <p><strong>Active: {{dessert.active}}</strong></p>
+        <a href="{% url 'update_product' dessert.id %}?item_type=dessert" class="btn btn-warning">Update</a>
+
+        <button class="btn btn-danger btn-delete-booking" data-product-id="{{ dessert.id}}" data-product-type="dessert"
+            data-bs-toggle="modal" data-bs-target="#deleteConfirm">Delete</button>
+
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>

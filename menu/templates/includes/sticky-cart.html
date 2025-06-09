@@ -1,0 +1,31 @@
+<div class="card sticky-cart d-none d-md-none d-lg-block text-center container-fluid">
+    <p><strong>Cart Overview:</strong></p>
+    <hr>
+    {% for item in bag_items %}
+    <div class="row text-start mb-2">
+        <div class="col-8">
+            {{ item.quantity }} x {{ item.product_name }} @ £{{ item.price }}
+            <p class="text-start"><strong>Item total: £{{item.total}}</strong></p>
+        </div>
+        <div class="col-4 text-end">
+            <button class="btn btn-danger btn-sm btn-reduce-quantity" data-item-type="{{item.item_type}}"
+                data-item-id="{{item.item_id}}">-</button>
+            <button class="btn btn-warning btn-sm btn-increase-quantity" data-item-type="{{item.item_type}}"
+                data-item-id="{{item.item_id}}">+</button>
+            <input type="hidden" name="redirect_url" value="{% url 'menu' %}"><input type="hidden" name="item_id"
+                value="{{ item.item_id.id }}">
+        </div>
+    </div>
+    {% endfor %}
+    {% if bag_quantity > 0 %}
+    <div class="row">
+        <div class="col text-end">
+            <p><strong>Items: {{ bag_quantity}}</strong></p>
+            <p><strong>Grand Total: £{{grand_total}}</strong></p>
+        </div>
+    </div>
+    <a href="{% url 'checkout' %}" class="col-12 btn btn-warning mb-3">Pay</a>
+    {% else %}
+    <p>Empty</p>
+    {% endif %}
+</div>
