@@ -2,6 +2,7 @@ from django import forms
 from menu.models import Pizza, Deal, Extras
 from checkout.models import PizzaOrder
 
+
 class NewPizzaForm(forms.ModelForm):
     """
     An instance to create a new pizza
@@ -18,10 +19,12 @@ class NewPizzaForm(forms.ModelForm):
             "price",
         )
 
-        widgets = {          
-            "description": forms.Textarea(attrs={'style': 'width:100%', "rows":3}),
+        widgets = {
+            "description": forms.Textarea(attrs={'style': 'width:100%',
+                                                 "rows": 3}),
             "price": forms.NumberInput(attrs={'style': 'width:100%'}),
         }
+
 
 class NewDealForm(forms.ModelForm):
     """
@@ -30,7 +33,7 @@ class NewDealForm(forms.ModelForm):
     class Meta:
 
         model = Deal
-        fields =(
+        fields = (
             "name",
             "description",
             "pizza",
@@ -41,9 +44,11 @@ class NewDealForm(forms.ModelForm):
             "active",
         )
         widgets = {
-            "description": forms.Textarea(attrs={'style': 'width:100%', "rows":3}),            
-            "price": forms.NumberInput(attrs={'style': 'width:100%'}),        
+            "description": forms.Textarea(attrs={'style': 'width:100%',
+                                                 "rows": 3}),
+            "price": forms.NumberInput(attrs={'style': 'width:100%'}),
         }
+
 
 class NewExtraForm(forms.ModelForm):
     """
@@ -52,28 +57,29 @@ class NewExtraForm(forms.ModelForm):
     class Meta:
 
         model = Extras
-        fields =(
+        fields = (
             "name",
             "description",
             "category",
             "price",
             "active",
         )
-        widgets = {        
-            "description": forms.Textarea(attrs={'style': 'width:100%', "rows":3}),            
-            "price": forms.NumberInput(attrs={'style': 'width:100%'}),           
+        widgets = {
+            "description": forms.Textarea(attrs={'style': 'width:100%',
+                                                 "rows": 3}),
+            "price": forms.NumberInput(attrs={'style': 'width:100%'}),
         }
+
 
 class StatusForm(forms.ModelForm):
     """
-    An instance of the Pizza Order 
+    An instance of the Pizza Order
     """
 
     class Meta:
 
         model = PizzaOrder
 
-        fields = (          
+        fields = (
             "status",
         )
-     

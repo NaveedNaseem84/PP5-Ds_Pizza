@@ -1,5 +1,5 @@
 from django.contrib import admin
-from.models import PizzaOrder, OrderLineItem
+from .models import PizzaOrder, OrderLineItem
 
 
 class PizzaOrderLineAdmin(admin.TabularInline):
@@ -44,7 +44,6 @@ class PizzaOrderAdmin(admin.ModelAdmin):
         'address_line_2',
         'town',
         'postcode',
-        
         'order_total',
         'status',
     )
@@ -57,7 +56,8 @@ class PizzaOrderAdmin(admin.ModelAdmin):
         'status',
     )
 
-    search_fields =['name', 'order_ref']
+    search_fields = ['name', 'order_ref']
     list_filter = ['status']
+
 
 admin.site.register(PizzaOrder, PizzaOrderAdmin)

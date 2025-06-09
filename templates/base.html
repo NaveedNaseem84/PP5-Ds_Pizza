@@ -140,11 +140,14 @@
         </div>
         <div id="messages" class="p-2 text-center">
             {% if user.is_authenticated %}
-            <p class="text-center m-3">Current user: {{ user }}</p>
+                {% if user.is_staff %}
+                    <p class="text-center m-2">Current user: {{ user }}</p>
+                {% elif not user.us_staff %}
+                    <p class="text-center m-2">Hi {{ user }}. Check back soon for more functionality!</p>
+                {% endif %}    
             {% else %}
             <p class="text-center m-5"></p>
             {% endif %}
-
         </div>
     </header>
     <main>

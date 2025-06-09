@@ -1,7 +1,10 @@
 from django.http import HttpResponse
 
-# This file has been configured using CI Project Ado Webhooks. Credit in readme.md
-#Project - Boutique Ado  Introducing and Configuring Webhooks  Setting Up Stripe Webhooks for Event Handling
+# This file has been configured using CI Project Ado Webhooks.
+# Credit in readme.md
+# Project - Boutique Ado  Introducing and Configuring Webhooks
+# Setting Up Stripe Webhooks for Event Handling
+
 
 class stripeWH_Handler:
     """
@@ -19,7 +22,7 @@ class stripeWH_Handler:
         return HttpResponse(
             content=f'Webhook unknown: {event["type"]}',
             status=200)
-    
+
     def handle_payment_intent_succeeded(self, event):
         """
         Handle payment intent succeeded from stripe
@@ -28,7 +31,7 @@ class stripeWH_Handler:
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)
-    
+
     def handle_payment_intent_payment_failed(self, event):
         """
         Handle payment intent failed from stripe
@@ -37,5 +40,3 @@ class stripeWH_Handler:
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)
-    
- 
