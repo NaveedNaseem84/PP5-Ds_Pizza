@@ -23,6 +23,7 @@ class PizzaOrderAdmin(admin.ModelAdmin):
     inlines = (PizzaOrderLineAdmin,)
 
     readonly_fields = (
+        'user',
         'order_ref',
         'date',
         'order_total',
@@ -34,6 +35,7 @@ class PizzaOrderAdmin(admin.ModelAdmin):
     )
 
     fields = (
+        'user',
         'order_ref',
         'date',
         'name',

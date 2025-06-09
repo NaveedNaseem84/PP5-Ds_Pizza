@@ -24,11 +24,17 @@ def checkout_view(request):
         order_num = str(uuid.uuid4()).replace('-', '')[:order_no_length]
         order_form = orderForm(data=request.POST)
 
+        if request.user.is_authenticated:
+            user = request.user
+        else:
+            user = None
+
         if order_form.is_valid():
 
             order = PizzaOrder.objects.create(
                 order_ref=f"DS-{order_num}",
                 name=request.POST.get('name'),
+                user=user,
                 phone=request.POST.get('phone'),
                 email=request.POST.get('email'),
                 billing_name=request.POST.get('billing_name'),
