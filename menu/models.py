@@ -5,6 +5,7 @@ ACTIVE_CHOICES = [
         ("No", "No"),
     ]
 
+
 class Pizza(models.Model):
     """
     A single instance of the pizza model
@@ -21,9 +22,9 @@ class Pizza(models.Model):
                               default="No")
 
     is_gf = models.CharField(choices=ACTIVE_CHOICES,
-                              max_length=3,
-                              blank=False,
-                              default="No")
+                             max_length=3,
+                             blank=False,
+                             default="No")
 
     is_veg = models.CharField(choices=ACTIVE_CHOICES,
                               max_length=3,
@@ -60,7 +61,7 @@ class Extras(models.Model):
                               blank=False,
                               default="No")
 
-    price = models.DecimalField(max_digits=6, decimal_places=2) 
+    price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
         return f"{self.name}"
@@ -117,4 +118,3 @@ class Deal(models.Model):
 
     class Meta:
         verbose_name_plural = "Combo Deals"
-

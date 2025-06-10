@@ -67,6 +67,10 @@ def add_product(request):
 
     item = request.GET.get('item_type')
 
+    if item not in ['pizza', 'deal', 'extra']:
+        messages.add_message(request, messages.ERROR, 'Item type not found')
+        return redirect(menu_view)
+
     model, product_form, product = determine_product(item)
 
     if request.method == "POST":
