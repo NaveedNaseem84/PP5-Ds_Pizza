@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");*/
 
 /* Core styling */
 * {
@@ -13,7 +13,7 @@ main {
   display: flex;
   flex-direction: column;
   background-color: black;
-  color: white !important;
+ 
 }
 
 #django-messages {
@@ -59,7 +59,7 @@ a::after {
   padding: 5px;
   font-weight: bold;
   font-size: 120%;
-  background-color: black !important;
+  background-color: black;
   color: darkorange !important;
 }
 
@@ -79,7 +79,6 @@ a::after {
 
 #main-index-bg {
   background: url("/static/images/main-index-bg.webp");
-  background-attachment: fixed;
   padding: 1%;
 
 }
@@ -182,19 +181,15 @@ a::after {
 /* menu styling*/
 
 .card {
-  background-color: white !important;
-  color: black !important;
+
 
   border: 4px orange solid;
   border-radius: 15px;
 }
 
-.card-modal {
-  opacity: 1;
-}
 
 .product-heading {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0);
   border-radius: 50px;
   padding: 5px;
   border: 2px solid white;
@@ -218,7 +213,6 @@ a::after {
   border-radius: 50%;
   padding-top: 2px;
   display: inline-block;
-  opacity: 1;
   border: 2px green solid;
 }
 
@@ -229,7 +223,6 @@ a::after {
   border-radius: 50%;
   padding-top: 2px;
   display: inline-block;
-  opacity: 1;
 }
 
 .sticky-cart {
@@ -265,7 +258,6 @@ a::after {
 
 .secondary-bg {
   background: url("/static/images/secondary-bg.webp");
-  background-attachment: fixed;
   padding: 1%;
 }
 
