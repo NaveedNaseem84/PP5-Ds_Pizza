@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block extra_title %}404 Page not found{{ product }}{% endblock %}
+{% block content %}
+
+<div class="container-fluid secondary-bg d-flex flex-column h-100 text-center">
+    <h1>Oops...</h1>
+    <hr>
+    <h2>The page you are looking for isn't available at the moment.</h2>
+    <div class="col-sm text-center mt-5 pb-4">
+        <a href="{% url 'menu' %}" class="sm-4 btn btn-warning mr-3">Back to Menu</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -26,9 +26,17 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+
+    <!--Fav icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png">
+
     {% endblock %}
+    
 
     {% block corejs %}
+
     <script src="https://kit.fontawesome.com/5d6f06bc3f.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -38,6 +46,7 @@
 
     <!--Stripe JS-->
     <script src="https://js.stripe.com/v3/"></script>
+
     {% endblock %}
 
 </head>
@@ -46,7 +55,9 @@
     <header>
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light">
+
             {% include 'includes/nav.html' %}
+
         </nav>
 
         <!-- displaying Django messages -->
@@ -84,7 +95,9 @@
 
     <!-- Footer -->
     <footer class="footer mt-auto pt-3 text-center text-light">
+
         {% include 'includes/footer.html' %}
+        
     </footer>
     {% block postloadjs %}
     {% endblock %}
