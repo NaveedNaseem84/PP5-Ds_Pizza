@@ -81,7 +81,7 @@ a::after {
   background: url("/static/images/main-index-bg.webp");
   background-attachment: fixed;
   padding: 1%;
-  opacity: 0.9;
+
 }
 
 .main-logo {
@@ -184,7 +184,7 @@ a::after {
 .card {
   background-color: white !important;
   color: black !important;
-  opacity: 0.9;
+
   border: 4px orange solid;
   border-radius: 15px;
 }
@@ -203,6 +203,7 @@ a::after {
 .item-heading-deals {
   background-color: orange;
   color: black;
+  
 }
 
 .item-heading-pizzas {
