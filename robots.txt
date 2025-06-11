@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Sitemap: https://ds-pizza-79dee8bcf8d6.herokuapp.com/sitemap.xml

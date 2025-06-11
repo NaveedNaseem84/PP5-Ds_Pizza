@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/about/</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/accounts/login/</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/cart/</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/15?item_type=deal</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/16?item_type=deal</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/17?item_type=deal</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/14?item_type=deal</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/4?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/5?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/6?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/8?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/9?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/10?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/11?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/14?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/15?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/16?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/17?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/18?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/1?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/2?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/3?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/13?item_type=pizza</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/64?item_type=side</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/63?item_type=side</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/65?item_type=side</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/57?item_type=drink</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/58?item_type=drink</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/59?item_type=drink</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/60?item_type=dessert</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/61?item_type=dessert</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ds-pizza-79dee8bcf8d6.herokuapp.com/menu/product_detail/62?item_type=dessert</loc>
+  <lastmod>2025-06-11T11:35:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
