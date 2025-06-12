@@ -1,5 +1,4 @@
-from django.shortcuts import render, reverse, redirect, get_object_or_404
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, reverse, redirect
 from django.db import DatabaseError
 from django.contrib import messages
 from .models import Deal, Pizza, Extras
@@ -80,16 +79,7 @@ def product_detail(request, product_id):
     pizza = Pizza.objects.filter(active="Yes")
     extra = Extras.objects.filter(active='Yes')
 
-    if item == "pizza":
-        selected_product = get_object_or_404(Pizza, pk=product_id)
-    elif item == "deal":
-        selected_product = get_object_or_404(Deal, pk=product_id)
-    elif item in ("side", "drink", "dessert"):
-        selected_product = get_object_or_404(Extras, pk=product_id)
-    else:
-        messages.add_message(request, messages.ERROR,
-                             "Unknown item type")
-        return redirect(menu_view)
+    selected_product = determine_product_type(item, product_id)
 
     context = {
         "selected_product": selected_product,
@@ -97,7 +87,6 @@ def product_detail(request, product_id):
         "deals": deal,
         "pizza": pizza,
         "extras": extra
-
     }
 
     return render(request, 'menu/menu.html', context)
