@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
+from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from cart.contexts import cart_contents
@@ -110,14 +111,33 @@ def success_page(request, order_ref):
     if 'bag' in request.session:
         del request.session['bag']
 
+    """
+    confirmation email sent to email on order.
+    """
+
+    subject = f"Your order at D's: {order_ref}"
+
+    address = order.email
+    items_on_order = ""
+    for item in order.pizzaorderlineitems.all():
+        items_on_order += f"\n{item.quantity} x {item.product}"
+
+    message = f"""Many thanks for your order.\n\nYour order is as follows:\n
+    {items_on_order}\n\nItems: {item_count}\nTotal: £{order.order_total}\n
+    \n\nEnjoy!\nD's """
+
+    try:
+        send_mail(subject, message, settings.EMAIL_HOST_USER, [address])
+
+    except Exception as e:
+        messages.ERROR(request, f"{e} occured when trying to send an email")
+
     template = 'checkout/success.html'
     context = {
                 'order_ref': order_ref,
                 'order_name': order.name,
                 'order': order,
                 'item_count': item_count
-
-
             }
     return render(request, template, context)
 
@@ -132,7 +152,7 @@ def my_orders(request):
     order_count = user_orders.count()
 
     template = 'checkout/myorders.html'
-    context = {     
+    context = {
 
         'orders': user_orders,
         'order_count': order_count

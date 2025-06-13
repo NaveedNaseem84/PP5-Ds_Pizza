@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.validators import RegexValidator
 
 
 class PizzaOrder(models.Model):
@@ -18,13 +17,8 @@ class PizzaOrder(models.Model):
                              null=True, blank=True,
                              related_name="PizzaOrders")
 
-    phone = models.CharField(
-        max_length=11,
-        validators=[RegexValidator(
-            regex=r'^\d+$',
-            message="Please enter a valid phone number.",
-            code="invalid_number")]
-    )
+    phone = models.CharField(max_length=11, null=False, blank=False)
+
     email = models.EmailField(null=False, blank=False)
     billing_name = models.CharField(max_length=60, null=False,
                                     blank=False,

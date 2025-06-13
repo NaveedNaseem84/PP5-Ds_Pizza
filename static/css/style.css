@@ -99,6 +99,10 @@ font-weight: bold;
   margin-top: 2%;
 }
 
+.phone {
+  font-size: 130%;
+}
+
 .main-logo-credentials {
   background-image: url("/static/images/logo.webp");
   background-repeat: no-repeat;
