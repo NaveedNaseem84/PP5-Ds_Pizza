@@ -31,7 +31,7 @@ var style = {
     }
 };
 var card = elements.create('card', {style: style});
-var controlSubmit = document.getElementById('submit-button')
+var controlSubmit = document.getElementById('submit-button');
 card.mount('#card-element');
 
 // Handle realtime validation errors on the card element

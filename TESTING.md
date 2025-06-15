@@ -132,6 +132,32 @@ The code has been validated using the recommended [PEP8 CI Python Linter](https:
 |menu         | [views.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/menu/views.py)          | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/menu/views.py)     | [Screenshot](readme-images/testing/validation/py-menu-views-validation.png)        | No Errors     |
 
 
+## Lighthouse Scores
+
+The site has been tested using the Lighthouse Audit tool to check for any major issues. It was tested for both mobile and desktop views, and the results are tabulated below:
+
+
+| Page         | Mobile                                                                       | Desktop                                                                      |
+| -------------| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+|Register      |[Screenshot](readme-images/testing/lighthouse/lighthouse-register-mobile.png) | [Screenshot](readme-images/testing/lighthouse/lighthouse-register-desktop.png)
+|Login         |[Screenshot](readme-images/testing/lighthouse/lighthouse-login-mobile.png)    | [Screenshot](readme-images/testing/lighthouse/lighthouse-login-desktop.png)
+|logout        |[Screenshot](readme-images/testing/lighthouse/lighthouse-logout-mobile.png)   | [Screenshot](readme-images/testing/lighthouse/lighthouse-logout-desktop.png)
+|Home          |[Screenshot](readme-images/testing/lighthouse/lighthouse-home-mobile.png)     | [Screenshot](readme-images/testing/lighthouse/lighthouse-home-desktop.png)
+|Menu          |[Screenshot](readme-images/testing/lighthouse/lighthouse-menu-mobile.png)     | [Screenshot](readme-images/testing/lighthouse/lighthouse-menu-desktop.png)
+|About us      |[Screenshot](readme-images/testing/lighthouse/lighthouse-about-mobile.png)    | [Screenshot](readme-images/testing/lighthouse/lighthouse-about-desktop.png)
+|Cart          |[Screenshot](readme-images/testing/lighthouse/lighthouse-cart-mobile.png)     | [Screenshot](readme-images/testing/lighthouse/lighthouse-cart-desktop.png)
+|Checkout      |[Screenshot](readme-images/testing/lighthouse/lighthouse-checkout-mobile.png) | [Screenshot](readme-images/testing/lighthouse/lighthouse-checkout-desktop.png)
+|Success       |[Screenshot](readme-images/testing/lighthouse/lighthouse-success-mobile.png)  | [Screenshot](readme-images/testing/lighthouse/lighthouse-success-desktop.png)
+|My Orders     |[Screenshot](readme-images/testing/lighthouse/lighthouse-myorders-mobile.png) | [Screenshot](readme-images/testing/lighthouse/lighthouse-myorders-desktop.png)
+|Add Item      |[Screenshot](readme-images/testing/lighthouse/lighthouse-additem-mobile.png)  | [Screenshot](readme-images/testing/lighthouse/lighthouse-additem-desktop.png)
+|Edit Item     |[Screenshot](readme-images/testing/lighthouse/lighthouse-edititem-mobile.png) | [Screenshot](readme-images/testing/lighthouse/lighthouse-edititem-desktop.png)
+|404           |[Screenshot](readme-images/testing/lighthouse/lighthouse-404-mobile.png)      | [Screenshot](readme-images/testing/lighthouse/lighthouse-404-desktop.png)
+
+
+Durning the course of the lighthouse testing it was found that there were certain warnings that fell beyound the scope of my control, and that results on mobile tended to be lower across the board.
+
+
+
 
 ## Fixed Bugs
 

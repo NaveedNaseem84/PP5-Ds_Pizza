@@ -1,8 +1,8 @@
 const deleteButtons = document.getElementsByClassName("btn-delete-booking");
 const deleteConfirm = document.getElementById("deleteConfirmation");
 
-let productId = null
-let productType = null
+let productId = null;
+let productType = null;
 
 document.addEventListener("DOMContentLoaded", domEventListener);
 
@@ -16,7 +16,7 @@ function domEventListener() {
 
 function processProductDelete() {
    productId = this.getAttribute("data-product-id");
-   productType = this.getAttribute("data-product-type")
+   productType = this.getAttribute("data-product-type");
   
   deleteConfirm.addEventListener("click", () => {
      if (productId && productType) {
