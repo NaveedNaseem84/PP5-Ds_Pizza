@@ -1,5 +1,6 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import NewPizzaForm, NewDealForm, NewExtraForm, StatusForm
 from menu.models import Deal, Pizza, Extras
@@ -7,6 +8,7 @@ from checkout.models import PizzaOrder
 from menu.views import menu_view
 
 
+@login_required
 def management_view(request):
     """
     dashboard to show the all current orders with status
@@ -19,7 +21,7 @@ def management_view(request):
     orders = PizzaOrder.objects.prefetch_related(
         "pizzaorderlineitems"
         ).filter(status__in=[
-            "Ordered", "Preparing", "Ready",])
+            "Ordered", "Preparing", "Ready", ])
 
     ordered_count = orders.filter(status="Ordered").count()
     preparing_count = orders.filter(status="Preparing").count()
@@ -54,6 +56,7 @@ def determine_product(item):
         return None, None, None
 
 
+@login_required
 def add_product(request):
     """
     Creates a new instance of a product.
@@ -94,6 +97,7 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def update_product(request, product_id):
 
     if not request.user.is_staff:
@@ -131,6 +135,7 @@ def update_product(request, product_id):
     return render(request, template, context)
 
 
+@login_required
 def update_order_status(request, order_id):
 
     if not request.user.is_staff:

@@ -1,5 +1,6 @@
 from django.shortcuts import render, reverse, redirect
 from django.db import DatabaseError
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Deal, Pizza, Extras
 from cart.utils import (
@@ -116,6 +117,7 @@ def menu_decrease_from_bag(request, item_id, item_type):
     return redirect(reverse(menu_view))
 
 
+@login_required
 def delete_product(request, product_id):
 
     if not request.user.is_staff:

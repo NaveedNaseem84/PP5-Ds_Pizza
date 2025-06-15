@@ -17,7 +17,7 @@ function domEventListener() {
 function IncreaseCartQty() {
 
   let itemId = this.getAttribute("data-item-id");
-  let itemType = this.getAttribute("data-item-type")
+  let itemType = this.getAttribute("data-item-type");
   if (itemId && itemType) {
     window.location.href = `increase/${itemId}/${itemType}`;
 
@@ -27,7 +27,7 @@ function IncreaseCartQty() {
 function DecreaseCartQty() {
 
   let itemId = this.getAttribute("data-item-id");
-  let itemType = this.getAttribute("data-item-type")
+  let itemType = this.getAttribute("data-item-type");
   if (itemId && itemType) {
     window.location.href = `decrease/${itemId}/${itemType}`;
 

@@ -18,12 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
-    path('menu/', include('menu.urls')),
+    path('about/', include('about.urls')),
     path('cart/', include('cart.urls')),
     path('checkout/', include('checkout.urls')),
     path('management/', include('management.urls')),
-    path('about/', include('about.urls')),
+    path('menu/', include('menu.urls')),
 ]
