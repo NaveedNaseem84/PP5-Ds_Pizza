@@ -187,30 +187,56 @@ The site has been deployed and tested on multiple desktop browser to check for a
 |Checkout                 | [Screenshot](readme-images/testing/browser/edge-checkout.png)              |  [Screenshot](readme-images/testing/browser/chrome-checkout.png)               |[Screenshot](readme-images/testing/browser/moz-checkout.png)           | No issues |
 |Checkout- success        | [Screenshot](readme-images/testing/browser/edge-order-success.png)         |  [Screenshot](readme-images/testing/browser/chrome-order-success.png)          |[Screenshot](readme-images/testing/browser/moz-order-success.png)      | No issues |
 |My Orders                | [Screenshot](readme-images/testing/browser/edge-myorders.png)              |  [Screenshot](readme-images/testing/browser/chrome-myorders.png)               |[Screenshot](readme-images/testing/browser/moz-my-orders.png)          | No issues |
-|All Order                | [Screenshot](readme-images/testing/browser/edge-all-orders.png)            |  [Screenshot](readme-images/testing/browser/chrome-all-orders.png)             |[Screenshot](readme-images/testing/browser/moz-all-orders.png)         | No issues |
+|All Orders               | [Screenshot](readme-images/testing/browser/edge-all-orders.png)            |  [Screenshot](readme-images/testing/browser/chrome-all-orders.png)             |[Screenshot](readme-images/testing/browser/moz-all-orders.png)         | No issues |
 |About us                 | [Screenshot](readme-images/testing/browser/edge-about-us.png)              |  [Screenshot](readme-images/testing/browser/chrome-about-us.png)               |[Screenshot](readme-images/testing/browser/moz-about-us.png)           | No issues |
 |404                      | [Screenshot](readme-images/testing/browser/edge-404.png)                   |  [Screenshot](readme-images/testing/browser/chrome-404.png)                    |[Screenshot](readme-images/testing/browser/moz-404.png)                | No issues |
 
 
-## Responsiveness
+## Responsiveness and performance Testing
 
-In addition to the desktop testing above, the site has also been tested on the following devices:
+In addition to the desktop testing above, the site has also been tested on the following physical devices:
 - Mobile: Samsung A32 5g
 - Tablet: Apple iPad 10th gen
 
 The results from the testing are tabulated below:
-![alt text](image.png)
 
 
-| Page                    | Mobile                                                                     | Tablet                                                                         | Outcome                                                               | 
-| ------------------------| -------------------------------------------------------------------------- | -------------------------------------------------------------------------------|-----------------------------------------------------------------------|
-|Register
+| Page                    | Mobile                                                                     | Tablet                                                                         | Outcome    | 
+| ------------------------| -------------------------------------------------------------------------- | -------------------------------------------------------------------------------|------------|
+|Register                 | [Screenshot](readme-images/testing/device/mobile-register.png)             | [Screenshot](readme-images/testing/device/ipad-register.png)                   | No Issues  |
+|Login                    | [Screenshot](readme-images/testing/device/mobile-login.png)                | [Screenshot](readme-images/testing/device/ipad-login.png)                      | No Issues  |
+|Logout                   | [Screenshot](readme-images/testing/device/mobile-logout.png)               | [Screenshot](readme-images/testing/device/ipad-logout.png)                     | No Issues  |
+|Home                     | [Screenshot](readme-images/testing/device/mobile-home.png)                 | [Screenshot](readme-images/testing/device/ipad-home.png)                       | No Issues  |
+|Menu                     | [Screenshot](readme-images/testing/device/mobile-menu.png)                 | [Screenshot](readme-images/testing/device/ipad-menu.png)                       | No Issues  |
+|Menu-item details        | [Screenshot](readme-images/testing/device/menu-item-details.png)           | [Screenshot](readme-images/testing/device/ipad-menu-details.png)               | No Issues  |
+|Menu - add to cart       | [Screenshot](readme-images/testing/device/menu-add-to-cart.png)            | [Screenshot](readme-images/testing/device/ipad-add-to-cart.png)                | No Issues  |
+|Menu-increase quantity   | [Screenshot](readme-images/testing/device/menu-add-to-cart.png)            | [Screenshot](readme-images/testing/device/ipad-increase-qty.png)               | No Issues  |
+|Menu- decrease quantity  | [Screenshot](readme-images/testing/device/mobile-decrease-qty.png)         | [Screenshot](readme-images/testing/device/ipad-decrease-qty.png)               | No Issues  |
+|Menu - max quantity      | [Screenshot](readme-images/testing/device/mobile-max-qty.png)              | [Screenshot](readme-images/testing/device/ipad-max-qty.png)                    | No Issues  |
+|Menu - remove all        | [Screenshot](readme-images/testing/device/mobile-remove-all.png)           | [Screenshot](readme-images/testing/device/ipad-empty-cart.png)                 | No Issues  |
+|Menu-filter Gluten Free  | [Screenshot](readme-images/testing/device/mobile-gf-options.png)           | [Screenshot](readme-images/testing/device/ipad-gf-options.png)                 | No Issues  |
+|Menu-filter Veg          | [Screenshot](readme-images/testing/device/mobile-veg-options.png)          | [Screenshot](readme-images/testing/device/ipad-veg-options-shown.png)          | No Issues  |
+|Menu-filter Veg and GF   | [Screenshot](readme-images/testing/device/mobile-veg-gf-options.png)       | [Screenshot](readme-images/testing/device/ipad-veg-gf-shown.png)               | No Issues  |
+|Menu-filter option needed| [Screenshot](readme-images/testing/device/mobile-option-needed.png)        | [Screenshot](readme-images/testing/device/ipad-filter-make-selection.png)      | No Issues  |
+|Menu-filter all shown    | [Screenshot](readme-images/testing/device/mobile-all-options-shown.png)    | [Screenshot](readme-images/testing/device/ipad-filter-all.png)                 | No Issues  |
+|Menu-update item selected| [Screenshot](readme-images/testing/device/mobile-update-item.png)          | [Screenshot](readme-images/testing/device/ipad-update-item.png)                | No Issues  |
+|Menu -update updated     | [Screenshot](readme-images/testing/device/mobile-item-updated.png)         | [Screenshot](readme-images/testing/device/ipad-item-updated.png)               | No Issues  |
+|Menu - add item          | [Screenshot](readme-images/testing/device/mobile-add-item.png)             | [Screenshot](readme-images/testing/device/ipad-add-item.png)                   | No Issues  |
+|Menu - item added        | [Screenshot](readme-images/testing/device/mobile-item-added.png)           | [Screenshot](readme-images/testing/device/ipad-item-added.png)                 | No Issues  |
+|Menu - delete selected   | [Screenshot](readme-images/testing/device/mobile-delete-selected.png)      | [Screenshot](readme-images/testing/device/ipad-delete-selected.png)            | No Issues  |
+|Menu - deleted           | [Screenshot](readme-images/testing/device/mobile-item-deleted.png)         | [Screenshot](readme-images/testing/device/ipad-item-deleted.png)               | No Issues  |
+|Checkout                 | [Screenshot](readme-images/testing/device/mobile-checkout.png)             | [Screenshot](readme-images/testing/device/ipad-checkout.png)                   | No Issues  |
+|Checkout - success       | [Screenshot](readme-images/testing/device/mobile-checkout-success.png)     | [Screenshot](readme-images/testing/device/ipad-checkout-success.png)           | No Issues  |
+|My Orders                | [Screenshot](readme-images/testing/device/mobile-my-orders.png)            | [Screenshot](readme-images/testing/device/ipad-myorders.png)                   | No Issues  |
+|All Orders               | [Screenshot](readme-images/testing/device/mobiles-allorders.png)           | [Screenshot](readme-images/testing/device/ipad-allorders.png)                  | No Issues  |
+|About us                 | [Screenshot](readme-images/testing/device/mobile-about-us.png)             | [Screenshot](readme-images/testing/device/ipad-aboutus.png)                    | No Issues  |
+|404                      | [Screenshot](readme-images/testing/device/mobile-404.png)                  | [Screenshot](readme-images/testing/device/ipad-404.png)                        | No Issues  |
 
 
+## Defence programming Testing
+come back to
 
-
-
-
+## Manual Testing
 
 
 
