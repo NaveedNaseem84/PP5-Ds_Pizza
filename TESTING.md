@@ -25,6 +25,8 @@ The code has been tested using the the official W3C validator [W3C HTML Validato
 |templates   | [register.html](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/templates/account/signup.html)                             | [register](https://ds-pizza-79dee8bcf8d6.herokuapp.com/accounts/signup/)                                 | [Screenshot](readme-images/testing/validation/register-validation.png)                          | No Errors|
 |templates   | [logout.html](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/templates/account/logout.html)                               | [logout](https://ds-pizza-79dee8bcf8d6.herokuapp.com/accounts/logout/)                                   | [Screenshot](readme-images/testing/validation/logout-validation.png)                            | No Errors|
 
+> [!NOTE]
+> Return back to the [README.md](README.md) file.
 
 ### CSS 
 
@@ -131,6 +133,8 @@ The code has been validated using the recommended [PEP8 CI Python Linter](https:
 |menu         | [urls.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/menu/urls.py)            | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/menu/urls.py)      | [Screenshot](readme-images/testing/validation/py-menu-urls-validation.png)         | No Errors     |
 |menu         | [views.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/menu/views.py)          | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/menu/views.py)     | [Screenshot](readme-images/testing/validation/py-menu-views-validation.png)        | No Errors     |
 
+> [!NOTE]
+> Return back to the [README.md](README.md) file.
 
 ## Lighthouse Scores
 
@@ -191,6 +195,8 @@ The site has been deployed and tested on multiple desktop browser to check for a
 |About us                 | [Screenshot](readme-images/testing/browser/edge-about-us.png)              |  [Screenshot](readme-images/testing/browser/chrome-about-us.png)               |[Screenshot](readme-images/testing/browser/moz-about-us.png)           | No issues |
 |404                      | [Screenshot](readme-images/testing/browser/edge-404.png)                   |  [Screenshot](readme-images/testing/browser/chrome-404.png)                    |[Screenshot](readme-images/testing/browser/moz-404.png)                | No issues |
 
+> [!NOTE]
+> Return back to the [README.md](README.md) file.
 
 ## Responsiveness and performance Testing
 
@@ -236,11 +242,70 @@ The results from the testing are tabulated below:
 ## Defence programming Testing
 come back to
 
+> [!NOTE]
+> Return back to the [README.md](README.md) file.
+
 ## Manual Testing
 
+In addition to all the testing above, the following manual testing has been carried out checking each element of the site as a whole entity. The results have been tabulated below:
+
+| Test  | Test Step                                                           |Expected Result                            |              Actual Result                                                                  | Screenshot                                                   | Outcome | 
+| ------|:--------------------------------------------------------------------|----------------------------------------   | --------------------------------------------------------------------------------------------|--------------------------------------------------------------|:-------:|
+|MT2    | Navigation: Menu                                                    | Navigates to the menu page                | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-fullmenu.png)    | Pass    |
+|MT1    | Navigation: Access the site                                         | Navigate to the site, site loads          | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-siteloads.png)   | Pass    |
+|MT3    | Navigation: About us                                                | Navigates to the about us page            | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-aboutus.png)     | Pass    |
+|MT4    | Navigation: Register                                                | Navigates to the registration page        | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-registration.png)| Pass    |
+|MT5    | Navigation: Login                                                   | Navigates to the login page               | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-login-page.png)  | Pass    |
+|MT6    | Footer Navigation: Facebook                                         | Navigates to the facebook homepage        | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-facebook.png)    | Pass    |
+|MT7    | Footer Navigation: X                                                | Navigates to the X homepage               | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-X.png)           | Pass    |
+|MT8    | Footer Navigation: Instagram                                        | Navigates to the Instagram homepage       | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-insta.png)       | Pass    |
+|MT9    | Footer Navigation: Youtube                                          | Navigates to the Youtube homepage         | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-youtube.png)     | Pass    |
+|MT10   | Menu: menu loads                                                    | Full active menu can be seen              | Full menu available to see                                                                  |[Screenshot](readme-images/testing/manual/mt-fullmenu.png)    | Pass    |    
+|MT11   | Menu: Items                                                         | Menu items available in sections          | Broken down into Deals, Pizzas, Sides, Drinks, Desserts for ease.                           |[Screenshot](readme-images/testing/manual/mt-fullmenu.png)    | Pass    |
+|MT12   | Menu: Layout                                                        | Menu layout is easy to follow             | Layout easy to follow, consistent                                                           |[Screenshot](readme-images/testing/manual/mt-fullmenu.png)    | Pass    |
+|MT13   | Menu: Item information                                              | Items have information available          | Items appropriately named with descriptions and allergen info                               |[Screenshot](readme-images/testing/manual/mt-item-info.png)   | Pass    |
+|MT14   | Menu: Filter Veg Options                                            | Menu should filter and show veg only      | Filtered to show Veg options only. Notification given.                                      |[Screenshot](readme-images/testing/manual/mt-vegonly.png)     | Pass    |
+|MT15   | Menu: Filter GF Options                                             | Menu should filter and show GF only       | Filtered to show GF options only. Notification given.                                       |[Screenshot](readme-images/testing//manual/mt-gfonly.png)     | Pass    |
+|MT16   | Menu: filter GF and Veg Options                                     | Filter to show Veg and GF options only    | Filter to show veg and GF only. Notification given.                                         |[Screenshot](readme-images/testing/manual/mt-vegandgf.png)    | Pass    |
+|MT17   | Menu: Remove allergen filter                                        | Filter should be removed showing all      | Filtered removed, shows all. Notification given                                             |[Screenshot](readme-images/testing/manual/mt-alloptions.png)  | Pass    |
+|MT18   | Menu: Filter no selection, filter applied                           | User notfied as such, asked to correct    | Notification given: Please select an option first                                           |[Screenshot](readme-images/testing/manual/mt-filtererror.png) | Pass    |
+|MT19   | Menu: item details                                                  | Clicking view item details are visible    | Bootstrap modal opened: Item information given. Option to add to basked or close modal      |[Screenshot](readme-images/testing/manual/mt-iteminfo.png)    | Pass    |
+|MT20   | Menu: item details – close/navigate back                            | Navigates back to the menu page           | Modal closed using X or close button. Menu returned into view                               | as MT10                                                      | Pass    |
+|MT21   | Menu: Add to cart                                                   |  User can added item/quantity to cart     | Selected item/quantity added to cart. Notification given                                    |[Screenshot](readme-images/testing/manual/mt-addedtocart.png) | Pass    |
+|MT22   | Menu: Add to cart: 0 quantity                                       | User to be advised of minimum quantity    | Alert provided: Value must be greather than or equal to 1                                   |[Screenshot](readme-images/testing/manual/mt-addzero.png)     | Pass    |
+|MT23   | Menu: View item, update quantity                                    | The selected item quantity should update  | Quantity updated. Notification given. New quantity seen in cart                             |[Screenshot](readme-images/testing/manual/mt-updateqty.png)   | Pass    |
+|MT24   | Cart: Information                                                   | Cart reflects total items and total       | As expected. Cart updates dynamically.                                                      | As MT21 or MT22                                              | Pass    |
+|MT25   | Cart: Increase quantity                                             | Should increase, totals should update     | As expected. Notification given                                                             |[Screenshot](readme-images/testing/manual/mt-cart-add.png)    | Pass    |
+|MT26   | Cart: Decrease quantity                                             | Should decrease, totals should update     | As expected. Notification given                                                             |[Screenshot](readme-images/testing/manual/mt-cart-decrease.png)|Pass    |
+|MT27   | Cart: Decrease quantity < 1                                         | Item removed if quantity is 0 in cart     | As expected, notification given                                                             |[Screenshot](readme-images/testing//manual/mt-cartqty-0.png)  | Pass    |
+|MT28   | Cart: Increase quantity > 10                      | User informed of maximum allowed          | Notification given: Max quantity of 10 allowed. Cart values unchanged.                                        |[Screenshot](readme-images/testing/manual/mt-cart-max.png)    | Pass    |
+|MT29   | Navigation: Checkout                              | Navigation from cart takes the user to checkout page.       | As Expected.                                                                                |[Screenshot](readme-images/testing/manual/mt-checkout.png)    | Pass    |
+|MT30   | Checkout: Details                                 |Order for available with order summary.                      | As Expected.                                                                                | As MT29                                                      | Pass    |
+|MT31   | Checkout: "Pay" on empty form                     | The site should't process the order                         | Pay button disable till required fields filled.                                             | As MT29                                                      | Pass    |
+|MT32   | Checkout: Enter invalid card number               | User is notified of error                                   | User notified card is invalid                                                               |[Screenshot](readme-images/testing/manual/mt-card-invalid.png)| Pass    |
+|MT33   | Checkout: Invalid card :mm/yy                     | User is notified of the error                               | User notified mm/yy is invalid                                                              |[Screenshot](readme-images/testing/manual/mt-carmmyy-invalid.png)| Pass |
+|MT34   | Checkout: Valid payment info                      | Able to proceed to next step/pay                            | Pay button now enabled                                                                      |[Screenshot](readme-images/testing/manual/mt-validpayment.png) |  Pass  |
+|MT35   | Checkout: Form name missing                       | User should be notified                                     | Prompt given to correct                                                                     |[Screenshot](readme-images/testing/manual/mt-name-error.png)  | Pass    |
+|MT36   | Checkout: Form phone missing                      | User should be notified                                     | Prompt given to correct                                                                     |[Screenshot](readme-images/testing/manual/mt-phone-error.png) | Pass    |
+|MT37   | Checkout : Form Email missing                     | User should be notified                                     | Prompt given to correct                                                                     |[Screenshot](readme-images/testing/manual/mt-email-error.png) | Pass    |
+|MT38   | Checkout: Form billing name missing               | User should be notified                                     | Prompt given to correct                                                                     |[Screenshot](readme-images/testing/manual/mt-billing-err.png) | Pass    |
+|MT39   | Checkout: Form address 1 missing                  | User should be notified                                     | Prompt given to correct                                                                     |[Screenshot](readme-images/testing/manual/mt-add-error.png)   | Pass    |
+|MT40   | Checkout: Form town is missing                    | User should be notified                                     | Prompt given to correct                                                                     |[Screenshot](readme-images/testing/manual/mt-town-err.png)    | Pass    |
+|MT41   | Checkout: Form Postcode missing                   | User should be notified                                     | Prompt given to correct                                                                     |[Screenshot](readme-images/testing/manual/mt-postcode-err.png)| Pass    |
+|MT42   | Checkout: Pay, Order confirmation                 | Order proccessed, confirmation given to user                | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-order-conf.png)  | Pass    |
+|MT43   | Checkout: confirmation email sent/recieved        | Order confirmation emailed to user                          | Confirmation recieved                                                                       |[Screenshot](readme-images/testing/manual/mt-order-conf.png)  | Pass    |
+
+> [!NOTE]
+> Return back to the [README.md](README.md) file.
 
 
 ## Fixed Bugs
+
+[![GitHub issue custom search](https://img.shields.io/github/issues-search?query=repo%3Anaveednaseem84%2FPP5-Ds_Pizza%20label%3Abug&label=bugs)](https://www.github.com/naveednaseem84/PP5-Ds_Pizza/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
+
+ [GitHub Issues](https://www.github.com/naveednaseem84/PP5-Ds_Pizza/issues) has actively been used to track and manage bugs and issues during the development stages of my project. 
+
+ A summary of the bugs is available below:
 
 ### Issue 1 (ID: f5c1c2e)
 
@@ -292,5 +357,15 @@ If a new pizza is added to the database, and the gf/veg option are not exclusive
 
 ### Fix: (ID:a65a57c)
 This was fixed by updating the pizza modal to make the is_veg and is_gf feels mandatory. Once adjusted and migrated, a restest found the filter working as it should be.
+
+[![GitHub issues](https://img.shields.io/github/issues/naveednaseem84/PP5-Ds_Pizza)](https://www.github.com/naveednaseem84/PP5-Ds_Pizza/issues)
+
+Any remaining open issues can be tracked [here](https://www.github.com/naveednaseem84/PP5-Ds_Pizza/issues).
+
+> [!IMPORTANT]
+As far as I am aware there are no remaing bugs. I have endeavoured to throughly test the site but am unable to completely rule out the possibility of any arrising in the future.
+
+> [!NOTE]
+> Return back to the [README.md](README.md) file.
 
 
