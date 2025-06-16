@@ -154,7 +154,62 @@ The site has been tested using the Lighthouse Audit tool to check for any major 
 |404           |[Screenshot](readme-images/testing/lighthouse/lighthouse-404-mobile.png)      | [Screenshot](readme-images/testing/lighthouse/lighthouse-404-desktop.png)
 
 
-Durning the course of the lighthouse testing it was found that there were certain warnings that fell beyound the scope of my control, and that results on mobile tended to be lower across the board.
+During the course of the lighthouse testing it was found that there were certain warnings that fell beyound the scope of my control, and that results on mobile tended to be lower across the board.
+
+## Browser Testing
+
+The site has been deployed and tested on multiple desktop browser to check for any compatibility issues, and the results are documented below:
+
+| Page                    | Edge                                                                       | Chrome                                                                         | Firefox                                                               | Outcome   |
+| ------------------------| -------------------------------------------------------------------------- | -------------------------------------------------------------------------------|-----------------------------------------------------------------------|-----------|
+|Register                 | [Screenshot](readme-images/testing/browser/edge-register.png)              |  [Screenshot](readme-images/testing/browser/chrome-register.png)               |[Screenshot](readme-images/testing/browser/moz-register.png)           | No issues |
+|Login                    | [Screenshot](readme-images/testing/browser/edge-login.png)                 |  [Screenshot](readme-images/testing/browser/chrome-login.png)                  |[Screenshot](readme-images/testing/browser/moz-login.png)              | No issues |
+|logout                   | [Screenshot](readme-images/testing/browser/edge-logout.png)                |  [Screenshot](readme-images/testing/browser/chrome-logout.png)                 |[Screenshot](readme-images/testing/browser/moz-logout.png)             | No issues |
+|Home                     | [Screenshot](readme-images/testing/browser/edge-home.png)                  |  [Screenshot](readme-images/testing/browser/chrome-home.png)                   |[Screenshot](readme-images/testing/browser/moz-home.png)               | No issues |
+|Menu                     | [Screenshot](readme-images/testing/browser/edge-menu.png)                  |  [Screenshot](readme-images/testing/browser/chrome-menu.png)                   |[Screenshot](readme-images/testing/browser/moz-menu.png)               | No issues |
+|Menu-item details        | [Screenshot](readme-images/testing/browser/menu-product-details.png)       |  [Screenshot](readme-images/testing/browser/chrome-menu-details.png)           |[Screenshot](readme-images/testing/browser/moz-menu-details.png)       | No issues |
+|Menu-Add to cart         | [Screenshot](readme-images/testing/browser/edge-add-cart.png)              |  [Screenshot](readme-images/testing/browser/chrome-add-to-cart.png)            |[Screenshot](readme-images/testing/browser/moz-add-to-cart.png)        | No issues |
+|Menu-Increase quantity   | [Screenshot](readme-images/testing/browser/edge-increase-quantity.png)     |  [Screenshot](readme-images/testing/browser/chrome-increase-quantity.png)      |[Screenshot](readme-images/testing/browser/moz-increase-quantity.png)  | No issues |
+|Menu-Decrease quantity   | [Screenshot](readme-images/testing/browser/edge-decrease-qty.png)          |  [Screenshot](readme-images/testing/browser/chrome-decrease-quantity.png)      |[Screenshot](readme-images/testing/browser/moz-decrease-quantity.png)  | No issues |
+|Menu-max quantity        | [Screenshot](readme-images/testing/browser/edge-max-quantity.png)          |  [Screenshot](readme-images/testing/browser/chrome-max-quantity.png)           |[Screenshot](readme-images/testing/browser/moz-max-quantity.png)       | No issues |
+|Menu-remove all          | [Screenshot](readme-images/testing/browser/edge-remove-all.png)            |  [Screenshot](readme-images/testing/browser/chrome-remove-all.png)             |[Screenshot](readme-images/testing/browser/moz-remove-all.png)         | No issues |
+|Menu-filter Gluten Free  | [Screenshot](readme-images/testing/browser/edge-gf-filter.png)             |  [Screenshot](readme-images/testing/browser/chrome-gf-filter.png)              |[Screenshot](readme-images/testing/browser/moz-gf-filter.png)          | No issues |
+|Menu-filter Veg          | [Screenshot](readme-images/testing/browser/edge-veg-options.png)           |  [Screenshot](readme-images/testing/browser/chrome-veg-options.png)            |[Screenshot](readme-images/testing/browser/moz-veg-filter.png)         | No issues |
+|Menu-filter Veg and GF   | [Screenshot](readme-images/testing/browser/edge-veg-gf-options.png)        |  [Screenshot](readme-images/testing/browser/chrome-veg-gf-options.png)         |[Screenshot](readme-images/testing/browser/moz-veg-gf.png)             | No issues |
+|Menu-filter option needed| [Screenshot](readme-images/testing/browser/edge-option-missing.png)        |  [Screenshot](readme-images/testing/browser/chrome-option-missing.png)         |[Screenshot](readme-images/testing/browser/moz-option-missing.png)     | No issues |
+|Menu-filter all shown    | [Screenshot](readme-images/testing/browser/edge-filter-show-all.png)       |  [Screenshot](readme-images/testing/browser/chrome-filter-show-all.png)        |[Screenshot](readme-images/testing/browser/moz-filter-show-all.png)    | No issues |
+|Menu-update item selected| [Screenshot](readme-images/testing/browser/edge-update-item.png)           |  [Screenshot](readme-images/testing/browser/chrome-update-item.png)            |[Screenshot](readme-images/testing/browser/moz-update-item.png)        | No issues |
+|Menu-update updated      | [Screenshot](readme-images/testing/browser/edge-updated.png)               |  [Screenshot](readme-images/testing/browser/chrome-updated.png)                |[Screenshot](readme-images/testing/browser/moz-item-updated.png)       | No issues |
+|Menu-add item            | [Screenshot](readme-images/testing/browser/edge-add-item.png)              |  [Screenshot](readme-images/testing/browser/chrome-add-item.png)               |[Screenshot](readme-images/testing/browser/moz-add-item.png)           | No issues |
+|Menu-item added          | [Screenshot](readme-images/testing/browser/edge-item-added.png)            |  [Screenshot](readme-images/testing/browser/chrome-item-added.png)             |[Screenshot](readme-images/testing/browser/moz-item-added.png)         | No issues |
+|Menu-delete selected     | [Screenshot](readme-images/testing/browser/edge-delete-selected.png)       |  [Screenshot](readme-images/testing/browser/chrome-delete-selected.png)        |[Screenshot](readme-images/testing/browser/moz-delete-selected.png)    | No issues |
+|Menu-deleted             | [Screenshot](readme-images/testing/browser/edge-deleted.png)               |  [Screenshot](readme-images/testing/browser/chrome-deleted.png)                |[Screenshot](readme-images/testing/browser/moz-deleted.png)            | No issues |
+|Checkout                 | [Screenshot](readme-images/testing/browser/edge-checkout.png)              |  [Screenshot](readme-images/testing/browser/chrome-checkout.png)               |[Screenshot](readme-images/testing/browser/moz-checkout.png)           | No issues |
+|Checkout- success        | [Screenshot](readme-images/testing/browser/edge-order-success.png)         |  [Screenshot](readme-images/testing/browser/chrome-order-success.png)          |[Screenshot](readme-images/testing/browser/moz-order-success.png)      | No issues |
+|My Orders                | [Screenshot](readme-images/testing/browser/edge-myorders.png)              |  [Screenshot](readme-images/testing/browser/chrome-myorders.png)               |[Screenshot](readme-images/testing/browser/moz-my-orders.png)          | No issues |
+|All Order                | [Screenshot](readme-images/testing/browser/edge-all-orders.png)            |  [Screenshot](readme-images/testing/browser/chrome-all-orders.png)             |[Screenshot](readme-images/testing/browser/moz-all-orders.png)         | No issues |
+|About us                 | [Screenshot](readme-images/testing/browser/edge-about-us.png)              |  [Screenshot](readme-images/testing/browser/chrome-about-us.png)               |[Screenshot](readme-images/testing/browser/moz-about-us.png)           | No issues |
+|404                      | [Screenshot](readme-images/testing/browser/edge-404.png)                   |  [Screenshot](readme-images/testing/browser/chrome-404.png)                    |[Screenshot](readme-images/testing/browser/moz-404.png)                | No issues |
+
+
+## Responsiveness
+
+In addition to the desktop testing above, the site has also been tested on the following devices:
+- Mobile: Samsung A32 5g
+- Tablet: Apple iPad 10th gen
+
+The results from the testing are tabulated below:
+![alt text](image.png)
+
+
+| Page                    | Mobile                                                                     | Tablet                                                                         | Outcome                                                               | 
+| ------------------------| -------------------------------------------------------------------------- | -------------------------------------------------------------------------------|-----------------------------------------------------------------------|
+|Register
+
+
+
+
+
 
 
 
