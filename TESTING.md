@@ -3,6 +3,8 @@
 
 # Testing
 
+Add in summary and links to what is included
+
 ## Code Validation
 
 ### HTML
@@ -242,17 +244,20 @@ The results from the testing are tabulated below:
 ## Defence programming Testing
 come back to
 
+## User story testing?
+link in images?
+
 > [!NOTE]
 > Return back to the [README.md](README.md) file.
 
 ## Manual Testing
 
-In addition to all the testing above, the following manual testing has been carried out checking each element of the site as a whole entity. The results have been tabulated below:
+In addition to all the testing above, the following extensivee manual testing has been carried out checking each element of the site as a whole entity. The results have been tabulated below:
 
 | Test  | Test Step                                                           |Expected Result                            |              Actual Result                                                                  | Screenshot                                                   | Outcome | 
 | ------|:--------------------------------------------------------------------|----------------------------------------   | --------------------------------------------------------------------------------------------|--------------------------------------------------------------|:-------:|
-|MT2    | Navigation: Menu                                                    | Navigates to the menu page                | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-fullmenu.png)    | Pass    |
-|MT1    | Navigation: Access the site                                         | Navigate to the site, site loads          | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-siteloads.png)   | Pass    |
+|MT1    | Navigation: Menu                                                    | Navigates to the menu page                | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-fullmenu.png)    | Pass    |
+|MT2    | Navigation: Access the site                                         | Navigate to the site, site loads          | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-siteloads.png)   | Pass    |
 |MT3    | Navigation: About us                                                | Navigates to the about us page            | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-aboutus.png)     | Pass    |
 |MT4    | Navigation: Register                                                | Navigates to the registration page        | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-registration.png)| Pass    |
 |MT5    | Navigation: Login                                                   | Navigates to the login page               | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-login-page.png)  | Pass    |
@@ -358,14 +363,13 @@ If a new pizza is added to the database, and the gf/veg option are not exclusive
 ### Fix: (ID:a65a57c)
 This was fixed by updating the pizza modal to make the is_veg and is_gf feels mandatory. Once adjusted and migrated, a restest found the filter working as it should be.
 
-[![GitHub issues](https://img.shields.io/github/issues/naveednaseem84/PP5-Ds_Pizza)](https://www.github.com/naveednaseem84/PP5-Ds_Pizza/issues)
-
-Any remaining open issues can be tracked [here](https://www.github.com/naveednaseem84/PP5-Ds_Pizza/issues).
 
 > [!IMPORTANT]
-As far as I am aware there are no remaing bugs. I have endeavoured to throughly test the site but am unable to completely rule out the possibility of any arrising in the future.
+As far as I am aware there are no remaing bugs. I have endeavoured to throughly test the site but am unable to completely rule out the possibility of any arising in the future.
 
 > [!NOTE]
 > Return back to the [README.md](README.md) file.
+
+
 
 
