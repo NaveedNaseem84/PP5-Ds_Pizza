@@ -64,7 +64,7 @@ def checkout_view(request):
             order.order_total = order_total
             order.save()
             request.session['success_page'] = order.order_ref
-            
+
             print("from Checkout")
             print(request.session['success_page'])
 

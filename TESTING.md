@@ -5,18 +5,18 @@
 
 The following testing has conducted and documented within this document:
 
-### Code Validation
-### HTML
-### CSS
-### JavaScript
-### Python
-### Lighthouse scores
-### Browser Testing
-### Responsiveness and performance Testing
-### Defence programming Testing
-### User Story Testing
-### Manual Testing
-### Fixed Bugs
+### [Code Validation](#code-validation-1)
+### [HTML](#html-1)
+### [CSS](#css-1)
+### [JavaScript](#javascript-1)
+### [Python](#python-1)
+### [Lighthouse scores](#lighthouse-scores-1)
+### [Browser Testing](#browser-testing-1)
+### [Responsiveness and performance Testing](#responsiveness-and-performance-testing-1)
+### [Defence programming Testing](#defence-programming-testing-1)
+### [Manual Testing](#manual-testing-1)
+### [User Story Testing](#user-story-testing-1)
+### [Fixed Bugs](#fixed-bugs-1)
 
 ## Code Validation
 
@@ -40,8 +40,7 @@ The code has been tested using the the official W3C validator [W3C HTML Validato
 |templates   | [register.html](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/templates/account/signup.html)                             | [register](https://ds-pizza-79dee8bcf8d6.herokuapp.com/accounts/signup/)                                 | [Screenshot](readme-images/testing/validation/register-validation.png)                          | No Errors|
 |templates   | [logout.html](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/templates/account/logout.html)                               | [logout](https://ds-pizza-79dee8bcf8d6.herokuapp.com/accounts/logout/)                                   | [Screenshot](readme-images/testing/validation/logout-validation.png)                            | No Errors|
 
-> [!NOTE]
-> Return back to the [README.md](README.md) file.
+[Back to Contents.](#testing)
 
 ### CSS 
 
@@ -62,7 +61,7 @@ The code has been validated using the recommended [JShint Validator](https://jsh
 |static/about       | [mailchimp.js](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/static/js/about/mailchimp.js)         | N/A         | [Screenshot](readme-images/testing/validation/js-mailchimp-validation.png)| No Errors                                                    |
 |static/cart        | [cart.js](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/static/js/cart/cart.js)                    | N/A         | [Screenshot](readme-images/testing/validation/js-cart-validation.png)     | No Errors                                                    |
 |static/checkout    | [cart.js](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/static/js/checkout/stripe_elements.js)     | N/A         | [Screenshot](readme-images/testing/validation/js-stripe-validation.png)   | No Errors - one undefined variable (Stripe)*                 |
-|static/management | [management.js](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/static/js/management/management.js)  | N/A         | [Screenshot](readme-images/testing/validation/js-stripe-validation.png)   | No Errors                                                     |
+|static/management | [management.js](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/static/js/management/management.js)  | N/A         | [Screenshot](readme-images/testing/validation/js-management-validation.png)   | No Errors                                                     |
 
 *Defined by the Stripe documentation as needed
 
@@ -108,11 +107,11 @@ The code has been validated using the recommended [PEP8 CI Python Linter](https:
 | ------------| ------------------------------------------------------------------------------------------------------| -------------------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------------------------------------------|-------------- |               
 |checkout     | [admin.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/checkout/admin.py)                | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/checkout/admin.py)            | [Screenshot](readme-images/testing/validation/py-checkout-admin-validation.png)           | No Errors     |
 |checkout     | [forms.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/checkout/forms.py)                | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/checkout/forms.py)            | [Screenshot](readme-images/testing/validation/py-checkout-forms-validation.png)           | No Errors     |
-|checkout     | [models.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/checkout/models.py)              | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/checkout/forms.py)            | [Screenshot](readme-images/testing/validation/py-checkout-models-validation.png)          | No Errors     |
+|checkout     | [models.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/checkout/models.py)              | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/checkout/models.py)           | [Screenshot](readme-images/testing/validation/py-checkout-models-validation.png)          | No Errors     |
 |checkout     | [tests.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/checkout/tests.py)                | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/checkout/tests.py)            | [Screenshot](readme-images/testing/validation/py-checkout-tests-validation.png)           | No Errors     |
-|checkout     | [urls.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/checkout/urls.py)                  | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/checkout/urls.py)             | [Screenshot](readme-images/testing/validation/py-checkout-tests-validation.png)           | No Errors     |
+|checkout     | [urls.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/checkout/urls.py)                  | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/checkout/urls.py)             | [Screenshot](readme-images/testing/validation/py-checkout-urls-validation.png)           | No Errors     |
 |checkout     | [views.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/checkout/views.py)                | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/checkout/views.py)            | [Screenshot](readme-images/testing/validation/py-checkout-views-validation.png)           | No Errors     |
-|checkout     | [webhook_handler.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/checkout/views.py)      | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/checkout/webhook_handler.py)  | [Screenshot](readme-images/testing/validation/py-checkout-webhook-handler-validation.png) | No Errors     |
+|checkout     | [webhook_handler.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/checkout/webhook_handler.py)      | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/checkout/webhook_handler.py)  | [Screenshot](readme-images/testing/validation/py-checkout-webhook-handler-validation.png) | No Errors     |
 |checkout     | [webhooks.py](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/checkout/webhooks.py)          | [link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NaveedNaseem84/PP5-Ds_Pizza/main/checkout/webhooks.py)         | [Screenshot](readme-images/testing/validation/py-checkout-webhook-validation.png)         | No Errors     |
 
 
@@ -150,6 +149,8 @@ The code has been validated using the recommended [PEP8 CI Python Linter](https:
 
 > [!NOTE]
 > Return back to the [README.md](README.md) file.
+
+[Back to Contents.](#testing)
 
 ## Lighthouse Scores
 
@@ -213,6 +214,8 @@ The site has been deployed and tested on multiple desktop browser to check for a
 > [!NOTE]
 > Return back to the [README.md](README.md) file.
 
+[Back to Contents.](#testing)
+
 ## Responsiveness and performance Testing
 
 In addition to the desktop testing above, the site has also been tested on the following physical devices:
@@ -255,6 +258,9 @@ The results from the testing are tabulated below:
 
 > [!NOTE]
 > Return back to the [README.md](README.md) file.
+
+[Back to Contents.](#testing)
+
 ## Defence programming Testing
 
 In addition to the the extensive testing carried out in this document, the following defence programming testing has been conducted. This testing is ensure that the site responds accordingly should any of the data or actions get manipulated to execute in any other way than originally programmed. 
@@ -286,10 +292,6 @@ I have documented the page, expected action, the test carried out, the result an
 
 ** This order number is provided at the time of checkout and like the item value, it will be unique for each order. The returning user is redirected to the 404 page as default action for this to ensure that any order data that was available on the page when the order was created is no longer accessible via URL. The user would need to check their "my orders" section if they were logged in when placing the order, or check the email confirmation that was sent out when the order was created. This step has been put into place to address scenarios such as intruder collecting an order!
 
-
-
-## User story testing?
-link in images?
 
 > [!NOTE]
 > Return back to the [README.md](README.md) file.
@@ -342,10 +344,37 @@ The following manual testing has been carried out checking each element of the s
 |MT40   | Checkout: Form town is missing                    | User should be notified                                     | Prompt given to correct                                                                     |[Screenshot](readme-images/testing/manual/mt-town-err.png)    | Pass    |
 |MT41   | Checkout: Form Postcode missing                   | User should be notified                                     | Prompt given to correct                                                                     |[Screenshot](readme-images/testing/manual/mt-postcode-err.png)| Pass    |
 |MT42   | Checkout: Pay, Order confirmation                 | Order proccessed, confirmation given to user                | As Expected                                                                                 |[Screenshot](readme-images/testing/manual/mt-order-conf.png)  | Pass    |
-|MT43   | Checkout: confirmation email sent/recieved        | Order confirmation emailed to user                          | Confirmation recieved                                                                       |[Screenshot](readme-images/testing/manual/mt-order-conf.png)  | Pass    |
+|MT43   | Checkout: confirmation email sent/recieved        | Order confirmation emailed to user                          | Confirmation recieved                                                                       |[Screenshot](readme-images/testing/manual/mt-order-email.png)  | Pass    |
 
 > [!NOTE]
 > Return back to the [README.md](README.md) file.
+
+[Back to Contents.](#testing)
+
+## User story Testing
+
+The collective testing carried out in this document has tested all aspects of the site. To ensure that all the user stories have been implemented sucessfully, a summary of the results has been documented below:
+
+| Story # | User Story                                                           | Outcome                                            | Screenshot                                                         | Status    | 
+|---------|----------------------------------------------------------------------|----------------------------------------------------|--------------------------------------------------------------------|-----------|
+| US1     | As a Customer I can I can add items to the cart                      | so that I can review/buy them                      |[Screenshot](readme-images/testing/browser/edge-add-cart.png)       | Satisfied |
+| US2     | As a Customer I can remove items from the cart                       | so that I can adjust the amount needed             |[Screenshot](readme-images/testing/browser/edge-decrease-qty.png)   | Satisfied |
+| US3     | As a Customer I can proceed to the checkout                          | so that I can place the order                      |[Screenshot](readme-images/testing/browser/edge-checkout.png)       | Satisfied |
+| US4     | As a Customer I can see order confirmation                           | so that I know the order has been placed           |[Screenshot](readme-images/testing/browser/edge-order-success.png)  | Satisfied |
+| US5     | As a Customer I can save an order as a favourite repeat item         | so that I can easily re-order in the future        | N/A - optional not implemented in this iteration                   | N/A       |
+| US6     | As a Customer I can access the site on multiple devices - mobile     | so that I can view/order when it suits             | [Screenshot](readme-images/testing/device/mobile-home.png)         | Satisfied |
+| US6     | As above -mobile                                                     | As above                                           |[Screenshot](readme-images/testing/device/menu-item-details.png)    | Satisfied |
+| US6     | As above - ipad                                                      | As above                                           |[Screenshot](readme-images/testing/device/ipad-home.png)            | Satisfied |
+| US6     | As above - ipad                                                      | As above                                           |[Screenshot](readme-images/testing/device/ipad-increase-qty.png)    | Satisfied |
+| US7     | As a Customer I can see the complete menu                            |so that I can decide If/what I want to order        |[Screenshot](readme-images/testing/manual/mt-fullmenu.png)          | Satisfied |
+| US8     | As a Customer I can see deals clearly                                |so that I can order a complete meal in one go       |[Screenshot](readme-images/testing/manual/mt-fullmenu.png)          | Satisfied |
+| US9     | As a Customer I can see dietary/allergen information clearly         |o that I can make an informed decision when ordering|[Screenshot](readme-images/testing/manual/mt-item-info.png)         | Satisfied |
+| US10    |  As a Customer I can toggle between light/dark mode                  |so that it matches my view preference               |N/A - optional not implemented in this iteration                    | N/A       |
+| US11    |  As a admin I can add new products                                   |so that they are available on the menu              |[Screenshot](readme-images/testing/browser/edge-add-item.png)       | Satisfied |
+| US12    |  As an Admin I can see all the orders                                |so that I can aid fulfilment                        | [Screenshot](readme-images/testing/browser/edge-all-orders.png)    | Satisfied |
+| US13    |  As an Admin I can update products                                   |so that they always contain the latest information  | [Screenshot](readme-images/testing/browser/edge-update-item.png)   | Satisfied |
+| US14    |  As an admin I can remove products                                   | so that they are no longer on the menu             |[Screenshot](readme-images/testing/browser/edge-delete-selected.png)| Satisfied |
+| US15    |  As a Admin I can see sales statistics                               | so that can evaluate best/worst sellers            | N/A - optional not implemented in this iteration                   | N/A       |
 
 
 ## Fixed Bugs
@@ -409,10 +438,12 @@ This was fixed by updating the pizza modal to make the is_veg and is_gf feels ma
 
 
 > [!IMPORTANT]
-As far as I am aware there are no remaing bugs. I have endeavoured to throughly test the site but am unable to completely rule out the possibility of any arising in the future.
+As far as I am aware there are no remaining bugs. I have endeavoured to throughly test the site but am unable to completely rule out the possibility of any arising in the future.
 
 > [!NOTE]
 > Return back to the [README.md](README.md) file.
+
+[Back to Contents.](#testing)
 
 
 
