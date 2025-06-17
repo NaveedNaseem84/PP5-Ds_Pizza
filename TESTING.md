@@ -3,7 +3,20 @@
 
 # Testing
 
-Add in summary and links to what is included
+The following testing has conducted and documented within this document:
+
+### Code Validation
+### HTML
+### CSS
+### JavaScript
+### Python
+### Lighthouse scores
+### Browser Testing
+### Responsiveness and performance Testing
+### Defence programming Testing
+### User Story Testing
+### Manual Testing
+### Fixed Bugs
 
 ## Code Validation
 
@@ -240,9 +253,40 @@ The results from the testing are tabulated below:
 |About us                 | [Screenshot](readme-images/testing/device/mobile-about-us.png)             | [Screenshot](readme-images/testing/device/ipad-aboutus.png)                    | No Issues  |
 |404                      | [Screenshot](readme-images/testing/device/mobile-404.png)                  | [Screenshot](readme-images/testing/device/ipad-404.png)                        | No Issues  |
 
-
+> [!NOTE]
+> Return back to the [README.md](README.md) file.
 ## Defence programming Testing
-come back to
+
+In addition to the the extensive testing carried out in this document, the following defence programming testing has been conducted. This testing is ensure that the site responds accordingly should any of the data or actions get manipulated to execute in any other way than originally programmed. 
+
+The pupose of this defence testing is to also ensure that any user data provided is safe, and can only be accessed/modified by the user themselves or an admin. In addition to this, to ensure that a authenticated user is only able to access the area that they have been provided access to.
+
+I have documented the page, expected action, the test carried out, the result and provided a screenshot where applicable to demonstrate the defence in place so that it can easily be replicated. The results of this testing is tabulated below:
+
+
+|Test   | Page                       | Expected Action                                                           | Testing Steps                                                                                       | Result                                                  | Screenshot                                                           |
+|-------|----------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------------|
+|DF1    | Menu: quantity allowed     | The user should be prompted if quantity is beyound the allowed threshold  |1. Navigate to menu page. 2. Select item to view. 3. Enter 30 in quantity and click add              |Unallowed quantity correctly picked up, user notified    |[Screenshot](readme-images/testing/defence/defence-qty-added-over.png)|
+|DF2    | Menu: max increase allowed | The user should be notified if the max cart increase has been met         |1. Add item to cart. 2. From the cart, increase item quantity repeatedly using +                     | Once quantity of 10 is reached, user is notified        |[Screenshot](readme-images/testing/defence/df-max-increase.png)       |
+|DF3    | Menu: Manual overide of max| The user should recieve the notifications as in DF1 and DF2               |Steps 1+2 in DF1. 3. Right click quantity, inspect and change max to 100                             | User notified as in DF1 and DF2: Max 10 allowed         |As DF1 and/or DF2                                                     |
+|DF4    | Menu: unknown item type    | The product item type is invalid, the user is notified as such-redirected |1. Steps 1 + 2 in DF1. 3. Change URL `item_type` = dfsdfsdfsdf 4. Press enter                        | The site alerts: Item type not found, redirect to menu  |[Screenshot](readme-images/testing/defence/df-item-not-found.png)     |
+|DF5    | Management: add item       | The new product type is invalid, the admin is notified as such            |1. Login as admin. 2. Navigate to Add item. 3.  Change URL `item_type` = dfsdfsdfsdf. 4. Press enter | The site alerts: Item type not found, redirect to menu  |As DF4                                                                |
+|DF6    | 404 - page not found       | If the user navigates to a no existing page, the 404 page is shown        |1. Open site. 2. Append random URL items 3. Press enter                                              | Page not found, 404 show                                |[Screenshot](readme-images/testing/browser/edge-404.png)              |
+|DF7    | Management: Add pizza as non admin | Unauthorised access via link/or URL should be restricted          |1. Open site. 2. append `/management/add/item/?item_type=pizza` to URL. 3. Press enter.              | User is directed to login page to authenticate          |[Screenshot](readme-images/testing/browser/edge-login.png)            |
+|DF8    | Management: Add deal as non admin  | AS DF7                                                            |1. open site. 2. append `/management/add/item/?item_type=deal` to URL. 3. Press enter.               | As DF7                                                  | As DF7                                                               |
+|DF9    | Management: Add Extra as non admin | As DF7                                                            |1. open site. 2. append `/management/add/item/?item_type=extra` to URL. 3. Press enter.              | As DF7                                                  | As DF7                                                               |
+|DF10   | Menu: Delete item         | Access should be for admin only - URL access should be restricted          |1. open site. 2. append `/management/delete/int:14?item_type=dessert`* to URL. 3. Press enter        | As DF7                                                  | As DF7                                                               |
+|DF11   | Menu: Update item         | AS DF10                                                                    |1. Open site. 2. append `/management/update/int:17?item_type=deal`* to URL. 3. Press enter           | AS DF7                                                  | As DF7                                                               |
+|DF12   | Checkout: No items        | User should be redirected as there no items in checkout                    |1. Open site. 2. append `/checkout` to URL. 3. Press enter                                           | User notified: Nothing to checkout, redirected to menu  |[Screenshot](readme-images/testing/defence/df-empty-checkout.png)     |
+|DF13   | Checkout: Success page    | The checkout success page is not available via URL                         |1. open site. 2. append `/checkout/success/ORDERNUMBER/` to URL** 4. Press enter                     | User redirected to the default 404 page.                |[Screenshot](readme-images/testing/browser/edge-404.png)              |
+|DF14   |Checkout: my orders        | The user shouldn't be able to see other's orders directly via URL          |1. Open site. 2. append `/checkout/checkout/myorders/` to URL. Press enter                           | As DF7                                                  | AS DF7                                                               |
+
+**Notes:**
+* Please note: The `int` value may changing depending on the item. This would need to match an item on menu to replicate the test scenario. This can be found on the item details page within the the URL.
+
+** This order number is provided at the time of checkout and like the item value, it will be unique for each order. The returning user is redirected to the 404 page as default action for this to ensure that any order data that was available on the page when the order was created is no longer accessible via URL. The user would need to check their "my orders" section if they were logged in when placing the order, or check the email confirmation that was sent out when the order was created. This step has been put into place to address scenarios such as intruder collecting an order!
+
+
 
 ## User story testing?
 link in images?
@@ -252,7 +296,7 @@ link in images?
 
 ## Manual Testing
 
-In addition to all the testing above, the following extensivee manual testing has been carried out checking each element of the site as a whole entity. The results have been tabulated below:
+The following manual testing has been carried out checking each element of the site as a whole entity. The results have been tabulated below:
 
 | Test  | Test Step                                                           |Expected Result                            |              Actual Result                                                                  | Screenshot                                                   | Outcome | 
 | ------|:--------------------------------------------------------------------|----------------------------------------   | --------------------------------------------------------------------------------------------|--------------------------------------------------------------|:-------:|

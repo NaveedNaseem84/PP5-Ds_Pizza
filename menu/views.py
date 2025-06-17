@@ -76,6 +76,10 @@ def product_detail(request, product_id):
     selected_product = None
     item = request.GET.get('item_type')
 
+    if item not in ['pizza', 'deal', 'side', 'drink', 'dessert']:
+        messages.add_message(request, messages.ERROR, 'Item type not found')
+        return redirect(menu_view)
+
     deal = Deal.objects.filter(active='Yes')
     pizza = Pizza.objects.filter(active="Yes")
     extra = Extras.objects.filter(active='Yes')

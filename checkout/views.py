@@ -3,6 +3,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.http import Http404
 from cart.contexts import cart_contents
 from cart.utils import determine_product_type
 from .models import PizzaOrder, OrderLineItem
@@ -62,6 +63,11 @@ def checkout_view(request):
                     order_total += line_total
             order.order_total = order_total
             order.save()
+            request.session['success_page'] = order.order_ref
+            
+            print("from Checkout")
+            print(request.session['success_page'])
+
             messages.add_message(request,
                                  messages.SUCCESS, 'Order Created')
             return redirect(reverse('success_page', args=[order.order_ref]))
@@ -103,6 +109,13 @@ def success_page(request, order_ref):
     """
     redirect to success page once submission has been completed
     """
+    session_ref = request.session.get('success_page')
+
+    if session_ref != order_ref:
+        raise Http404
+
+    del request.session['success_page']
+
     order = get_object_or_404(PizzaOrder, order_ref=order_ref)
     item_count = 0
     for item in order.pizzaorderlineitems.all():
