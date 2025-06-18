@@ -81,7 +81,7 @@ def add_product(request):
 
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, 'Pizza added')
+            messages.add_message(request, messages.SUCCESS, "Item added")
 
             return redirect(menu_view)
     else:

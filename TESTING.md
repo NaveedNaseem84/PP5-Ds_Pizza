@@ -3,7 +3,7 @@
 
 # Testing
 
-The following testing has conducted and documented within this document:
+The following testing has been conducted and documented within this document:
 
 ### [Code Validation](#code-validation-1)
 ### [HTML](#html-1)
@@ -22,7 +22,7 @@ The following testing has conducted and documented within this document:
 
 ### HTML
 
-The code has been tested using the the official W3C validator [W3C HTML Validator.](https://validator.w3.org/nu/?doc=https%3A%2F%2Fds-pizza-79dee8bcf8d6.herokuapp.com%2F). This has been used to validate all of my HTML files and the results are tabulated below:
+The code has been tested using the the official W3C validator [W3C HTML Validator.](https://validator.w3.org/nu/?doc=https%3A%2F%2Fds-pizza-79dee8bcf8d6.herokuapp.com%2F) This has been used to validate all of my HTML files and the results are tabulated below:
 
 | Directory  | File                                                                                                                                |  Live URL                                                                                                |           Screenshot                                                                            |    Notes |
 | ---------- | --------------------------------------------------------------------------------------------------------                            | ---------------------------------------------------------------------------------------------------------| ------------------------------------------------------------------------------------------------|--------- |
@@ -60,7 +60,7 @@ The code has been validated using the recommended [JShint Validator](https://jsh
 | ------------------| --------------------------------------------------------------------------------------------------------------| ------------| --------------------------------------------------------------------------|------------------------------------------------------------- |
 |static/about       | [mailchimp.js](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/static/js/about/mailchimp.js)         | N/A         | [Screenshot](readme-images/testing/validation/js-mailchimp-validation.png)| No Errors                                                    |
 |static/cart        | [cart.js](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/static/js/cart/cart.js)                    | N/A         | [Screenshot](readme-images/testing/validation/js-cart-validation.png)     | No Errors                                                    |
-|static/checkout    | [cart.js](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/static/js/checkout/stripe_elements.js)     | N/A         | [Screenshot](readme-images/testing/validation/js-stripe-validation.png)   | No Errors - one undefined variable (Stripe)*                 |
+|static/checkout    | [stripe_elements.js](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/static/js/checkout/stripe_elements.js)     | N/A         | [Screenshot](readme-images/testing/validation/js-stripe-validation.png)   | No Errors - one undefined variable (Stripe)*                 |
 |static/management | [management.js](https://github.com/NaveedNaseem84/PP5-Ds_Pizza/blob/main/static/js/management/management.js)  | N/A         | [Screenshot](readme-images/testing/validation/js-management-validation.png)   | No Errors                                                     |
 
 *Defined by the Stripe documentation as needed
@@ -174,7 +174,7 @@ The site has been tested using the Lighthouse Audit tool to check for any major 
 |404           |[Screenshot](readme-images/testing/lighthouse/lighthouse-404-mobile.png)      | [Screenshot](readme-images/testing/lighthouse/lighthouse-404-desktop.png)
 
 
-During the course of the lighthouse testing it was found that there were certain warnings that fell beyound the scope of my control, and that results on mobile tended to be lower across the board.
+During the course of the lighthouse testing, it was found that there were certain warnings that fell beyond the scope of my control, and that results on mobile tended to be lower across the board.
 
 ## Browser Testing
 
@@ -263,7 +263,7 @@ The results from the testing are tabulated below:
 
 ## Defence programming Testing
 
-In addition to the the extensive testing carried out in this document, the following defence programming testing has been conducted. This testing is ensure that the site responds accordingly should any of the data or actions get manipulated to execute in any other way than originally programmed. 
+In addition to the extensive testing carried out in this document, defence programming testing has been conducted. This testing is to ensure that the site responds accordingly should any of the data or actions get manipulated to execute in any other way than originally programmed. 
 
 The pupose of this defence testing is to also ensure that any user data provided is safe, and can only be accessed/modified by the user themselves or an admin. In addition to this, to ensure that a authenticated user is only able to access the area that they have been provided access to.
 
@@ -272,7 +272,7 @@ I have documented the page, expected action, the test carried out, the result an
 
 |Test   | Page                       | Expected Action                                                           | Testing Steps                                                                                       | Result                                                  | Screenshot                                                           |
 |-------|----------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------------|
-|DF1    | Menu: quantity allowed     | The user should be prompted if quantity is beyound the allowed threshold  |1. Navigate to menu page. 2. Select item to view. 3. Enter 30 in quantity and click add              |Unallowed quantity correctly picked up, user notified    |[Screenshot](readme-images/testing/defence/defence-qty-added-over.png)|
+|DF1    | Menu: quantity allowed     | The user should be prompted if quantity is beyond the allowed threshold  |1. Navigate to menu page. 2. Select item to view. 3. Enter 30 in quantity and click add              |Unallowed quantity correctly picked up, user notified    |[Screenshot](readme-images/testing/defence/defence-qty-added-over.png)|
 |DF2    | Menu: max increase allowed | The user should be notified if the max cart increase has been met         |1. Add item to cart. 2. From the cart, increase item quantity repeatedly using +                     | Once quantity of 10 is reached, user is notified        |[Screenshot](readme-images/testing/defence/df-max-increase.png)       |
 |DF3    | Menu: Manual overide of max| The user should recieve the notifications as in DF1 and DF2               |Steps 1+2 in DF1. 3. Right click quantity, inspect and change max to 100                             | User notified as in DF1 and DF2: Max 10 allowed         |As DF1 and/or DF2                                                     |
 |DF4    | Menu: unknown item type    | The product item type is invalid, the user is notified as such-redirected |1. Steps 1 + 2 in DF1. 3. Change URL `item_type` = dfsdfsdfsdf 4. Press enter                        | The site alerts: Item type not found, redirect to menu  |[Screenshot](readme-images/testing/defence/df-item-not-found.png)     |
@@ -288,9 +288,10 @@ I have documented the page, expected action, the test carried out, the result an
 |DF14   |Checkout: my orders        | The user shouldn't be able to see other's orders directly via URL          |1. Open site. 2. append `/checkout/checkout/myorders/` to URL. Press enter                           | As DF7                                                  | AS DF7                                                               |
 
 **Notes:**
-* Please note: The `int` value may changing depending on the item. This would need to match an item on menu to replicate the test scenario. This can be found on the item details page within the the URL.
 
-** This order number is provided at the time of checkout and like the item value, it will be unique for each order. The returning user is redirected to the 404 page as default action for this to ensure that any order data that was available on the page when the order was created is no longer accessible via URL. The user would need to check their "my orders" section if they were logged in when placing the order, or check the email confirmation that was sent out when the order was created. This step has been put into place to address scenarios such as intruder collecting an order!
+*Please note: The `int` value may changing depending on the item. This would need to match an item on menu to replicate the test scenario. This can be found on the item details page within the the URL.
+
+** This order number is provided at the time of checkout and like the item value, it will be unique for each order. The returning user is redirected to the 404 page as default action for this to ensure that any order data that was available on the page when the order was created is no longer accessible via URL. The user would need to check their "my orders" section if they were logged in when placing the order, or check the email confirmation that was sent out when the order was created. This step has been put into place to address scenarios such sensitive data leaks or an intruder collecting the order!
 
 
 > [!NOTE]
@@ -320,7 +321,7 @@ The following manual testing has been carried out checking each element of the s
 |MT16   | Menu: filter GF and Veg Options                                     | Filter to show Veg and GF options only    | Filter to show veg and GF only. Notification given.                                         |[Screenshot](readme-images/testing/manual/mt-vegandgf.png)    | Pass    |
 |MT17   | Menu: Remove allergen filter                                        | Filter should be removed showing all      | Filtered removed, shows all. Notification given                                             |[Screenshot](readme-images/testing/manual/mt-alloptions.png)  | Pass    |
 |MT18   | Menu: Filter no selection, filter applied                           | User notfied as such, asked to correct    | Notification given: Please select an option first                                           |[Screenshot](readme-images/testing/manual/mt-filtererror.png) | Pass    |
-|MT19   | Menu: item details                                                  | Clicking view item details are visible    | Bootstrap modal opened: Item information given. Option to add to basked or close modal      |[Screenshot](readme-images/testing/manual/mt-iteminfo.png)    | Pass    |
+|MT19   | Menu: item details                                                  | Clicking view item details are visible    | Bootstrap modal opened: Item information given. Option to add to basket or close modal      |[Screenshot](readme-images/testing/manual/mt-iteminfo.png)    | Pass    |
 |MT20   | Menu: item details – close/navigate back                            | Navigates back to the menu page           | Modal closed using X or close button. Menu returned into view                               | as MT10                                                      | Pass    |
 |MT21   | Menu: Add to cart                                                   |  User can added item/quantity to cart     | Selected item/quantity added to cart. Notification given                                    |[Screenshot](readme-images/testing/manual/mt-addedtocart.png) | Pass    |
 |MT22   | Menu: Add to cart: 0 quantity                                       | User to be advised of minimum quantity    | Alert provided: Value must be greather than or equal to 1                                   |[Screenshot](readme-images/testing/manual/mt-addzero.png)     | Pass    |
@@ -398,8 +399,8 @@ The current "max" value for the quantity is set to 10. Using inspect on this qua
 ### Fix: (ID:a4116e4)
 
  This was fixed by implementing the following logic:
-    1. If the item is already in the cart, a python check allows a maximum increase to 10.
-    2. If the quantity is being added via the add to bag, a python check has been introduced to ensure the quantity is not over 10.
+ 1. If the item is already in the cart, a python check allows a maximum increase to 10.
+ 2. If the quantity is being added via the add to bag, a python check has been introduced to ensure the quantity is not over 10.
  In both cases a notification is given letting the user know. 
 
  ### Issue 2 (ID: 914df78)
