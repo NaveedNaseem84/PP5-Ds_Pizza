@@ -5,7 +5,7 @@ from checkout.models import PizzaOrder
 
 class NewPizzaForm(forms.ModelForm):
     """
-    An instance to create a new pizza
+    An form instance to create a new pizza
     """
     class Meta:
 
@@ -28,7 +28,7 @@ class NewPizzaForm(forms.ModelForm):
 
 class NewDealForm(forms.ModelForm):
     """
-    An instance of a new deal
+    An form instance of a new deal
     """
     class Meta:
 
@@ -52,7 +52,7 @@ class NewDealForm(forms.ModelForm):
 
 class NewExtraForm(forms.ModelForm):
     """
-    An instance of a side, drink or dessert
+    An form instance of a side, drink or dessert
     """
     class Meta:
 
@@ -73,7 +73,7 @@ class NewExtraForm(forms.ModelForm):
 
 class StatusForm(forms.ModelForm):
     """
-    An instance of the Pizza Order
+    An form instance of the Pizza Order
     """
 
     class Meta:

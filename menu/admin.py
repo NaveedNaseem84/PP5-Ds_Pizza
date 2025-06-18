@@ -4,6 +4,9 @@ from .models import Pizza, Extras, Deal
 
 @admin.register(Pizza)
 class PizzaAdmin(admin.ModelAdmin):
+    """
+    Admin Panel structure for Pizza Model
+    """
 
     list_display = ('name', 'is_gf', 'is_veg', 'price', 'active')
     search_fields = ['name', 'is_gf', 'is_veg', 'active']
@@ -12,6 +15,9 @@ class PizzaAdmin(admin.ModelAdmin):
 
 @admin.register(Extras)
 class ExtrasAdmin(admin.ModelAdmin):
+    """
+    Admin panel structure for the Extras model
+    """
 
     list_display = ('name', 'description', 'category', 'price', 'active')
     search_fields = ['name', 'category', 'active']
@@ -20,6 +26,9 @@ class ExtrasAdmin(admin.ModelAdmin):
 
 @admin.register(Deal)
 class DealAdmin(admin.ModelAdmin):
+    """
+    Admin panel structure for the extras model
+    """
     list_display = (
         'name', 'pizza', 'side', 'drink',
         'dessert', 'price', 'active'

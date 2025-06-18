@@ -6,6 +6,25 @@ def cart_contents(request):
     # core logic to add to context processor adapter from ADO Ci project.
     # credit in readme.md
 
+    """
+    Recieves the bag in the current request session.
+    Iterated to get the item type, id and quantity for each.
+
+    Product type determined using the helper `determine_product_type`
+
+    items added into bag items with the item, qty and name.
+
+    **Context**
+        `bag_items`
+            holds the item and info
+        `total`
+            sum of quantity * item price
+        `bag_quantity`
+            sum of total quantity of items
+        `grand_total`
+            running total for bag collated
+    """
+
     bag_items = []
     total = 0
     bag_quantity = 0

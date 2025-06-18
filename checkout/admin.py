@@ -3,6 +3,11 @@ from .models import PizzaOrder, OrderLineItem
 
 
 class PizzaOrderLineAdmin(admin.TabularInline):
+    """
+    Admin page setup for the PizzaOrderLineItem.
+
+    """
+
     model = OrderLineItem
     fields = (
         'quantity',
@@ -19,6 +24,18 @@ class PizzaOrderLineAdmin(admin.TabularInline):
 
 
 class PizzaOrderAdmin(admin.ModelAdmin):
+    """
+    Admin page setup for the Pizza Order.
+
+    **Context**
+        ``list_display``
+            order_ref, name, date, order_total, status
+        ``readonly_fields``
+            user, order_ref, date, order_total, billing_name
+            address_line_1, address_line_2, town, postcode
+        ``search_fields``
+            name, order_ref
+    """
 
     inlines = (PizzaOrderLineAdmin,)
 

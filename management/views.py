@@ -15,7 +15,7 @@ def management_view(request):
     """
 
     if not request.user.is_staff:
-        messages.add_message(request, messages.ERROR, 'Please login')
+        messages.add_message(request, messages.ERROR, 'Management access only')
         return redirect(reverse('menu'))
 
     orders = PizzaOrder.objects.prefetch_related(
@@ -61,6 +61,11 @@ def add_product(request):
     """
     Creates a new instance of a product.
     Deal, side or Dessert passed in as an item type on URL retrieval
+
+    Requires login
+
+    **Template:**
+        :template:`management/product_admin.html`
     """
 
     # added to show proof of concept only, expand on in readme
@@ -100,6 +105,18 @@ def add_product(request):
 @login_required
 def update_product(request, product_id):
 
+    """
+    Updates the selected instance of a product.
+
+    Checks to see if the form is valid before updating
+
+    Requires login
+
+    **Template:**
+        :template:`management/product_admin.html`
+
+    """
+
     if not request.user.is_staff:
         messages.add_message(request,
                              messages.ERROR,
@@ -137,6 +154,18 @@ def update_product(request, product_id):
 
 @login_required
 def update_order_status(request, order_id):
+
+    """
+    Allow authorised users to update order status
+
+    Instance of order form status rendered to template
+
+    Requires login
+
+    **Template:**
+        :template:`management/update_status.html`
+
+    """
 
     if not request.user.is_staff:
         messages.add_message(request,

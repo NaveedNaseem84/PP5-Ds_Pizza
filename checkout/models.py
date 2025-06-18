@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 
 
 class PizzaOrder(models.Model):
+    """
+    Stores a single Pizza Order Entry.
+    """
 
     STATUS = [
         ("Ordered", "Ordered"),
@@ -44,6 +47,9 @@ class PizzaOrder(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    Stores multiple entries for :Model:`PizzaOrder`.
+    """
 
     order = models.ForeignKey(PizzaOrder, null=False, blank=False,
                               on_delete=models.CASCADE,

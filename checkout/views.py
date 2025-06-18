@@ -15,6 +15,29 @@ import uuid
 
 
 def checkout_view(request):
+    """
+    Renders the checkout view.
+
+    Recieves the bag in session.
+
+    determines if the user is logged in.
+
+    if so, booking attached
+    if not, as none.
+
+    Validates the form using and payment details
+
+    if valid creates the order recieving the items from
+    the context processor bag
+
+    Order number is generated automatically using UUID
+
+    Stripe intent is created and sent via API to process.
+    if the form/payment is valid.
+
+    **Template:**
+        :template:`checkout/checkout.html`
+    """
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -107,7 +130,17 @@ def checkout_view(request):
 
 def success_page(request, order_ref):
     """
-    redirect to success page once submission has been completed
+    rendered once the order has been completed succesfully.
+
+    Confirmation shown to the user with order ref recieved
+
+    Email sent out using Gmail API to order email
+
+    Session success deleted so it can't be accessed via URL
+
+    **Template:**
+        :template:`checkout/success.html`
+
     """
     session_ref = request.session.get('success_page')
 
@@ -123,10 +156,6 @@ def success_page(request, order_ref):
 
     if 'bag' in request.session:
         del request.session['bag']
-
-    """
-    confirmation email sent to email on order.
-    """
 
     subject = f"Your order at D's: {order_ref}"
 
@@ -157,6 +186,16 @@ def success_page(request, order_ref):
 
 @login_required
 def my_orders(request):
+    """
+    User is able to login and see the orders created
+    whilst logged in. Only results attached to user
+    shown.
+
+    Requires login
+
+    **Template:**
+        :template:`checkout/myorders.html`
+    """
 
     user_orders = PizzaOrder.objects.filter(
         user=request.user

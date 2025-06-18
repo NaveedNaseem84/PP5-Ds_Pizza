@@ -12,6 +12,16 @@ from cart.utils import (
 
 
 def menu_view(request):
+    """
+    Renders the menu with the active items
+
+    Allows the option to filter based on allergy.
+
+    Admin is able to see ALL items regardless if active/not
+
+    **Template:**
+        :template:`menu/menu.html`
+    """
 
     filter = request.GET.get('allergen-filter')
 
@@ -73,6 +83,13 @@ def menu_view(request):
 
 
 def product_detail(request, product_id):
+    """
+    Retrieves the full details of the selected product which
+    are passed to the product detail modal
+
+    The product type is determined using the helper function
+    `determine_product_type`
+    """
     selected_product = None
     item = request.GET.get('item_type')
 
@@ -101,6 +118,8 @@ def menu_increase_from_bag(request, item_id, item_type):
     """
     Increase quantity of selected item in bag
     Display message to show which item has been updated.
+
+    Same concept as in `cart` increase
     """
     if max_allowed_in_cart(request, item_id, item_type):
         return redirect(menu_view)
@@ -115,6 +134,8 @@ def menu_decrease_from_bag(request, item_id, item_type):
     Decrease quantity of selected item in bag by 1
     Display message to show which item has been decreased.
     Display message when the cart is empty"
+
+    Same concept as in `cart` decrease
     """
     decrease_qty(request, item_id, item_type)
 
@@ -123,6 +144,13 @@ def menu_decrease_from_bag(request, item_id, item_type):
 
 @login_required
 def delete_product(request, product_id):
+    """
+    Delete the selected product
+
+    Product determined via the product type and Id recieved
+
+    Login required - only admin is able to access!
+    """
 
     if not request.user.is_staff:
         messages.add_message(request, messages.ERROR,
